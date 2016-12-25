@@ -1,0 +1,11 @@
+﻿@using System.Globalization
+@model IEnumerable<Matratt>
+
+@{
+    CultureInfo swe = new CultureInfo("sv-SE");
+}
+
+@foreach (var item in Model)
+{
+    <h1>@item.Pris.ToString("C", swe)</h1>
+}
