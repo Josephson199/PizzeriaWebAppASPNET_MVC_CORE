@@ -1,0 +1,46 @@
+﻿@model PizzeriaWebAppASPNET_MVC_CORE.Models.Kund
+
+
+    <form asp-controller="User" asp-action="Register" method="post">
+        <div class="col-sm-6 well">
+
+            <div class="form-group">
+                <label for="Namn">Namn</label>
+                <input id="Namn" asp-for="Namn" type="text"  class="form-control" />
+            </div>
+
+            <div class="form-group">
+                <label for="Gatuadress">Gatuadress</label>
+                <input id="Gatuadress" asp-for="Gatuadress" type="text"  class="form-control" />
+            </div>
+            <div class="row">
+                <div class="col-sm-6 form-group">
+                    <label>Postnr</label>
+                    <input asp-for="Postnr" type="text"  class="form-control">
+                </div>
+             
+                <div class="col-sm-6 form-group">
+                    <label>Postort</label>
+                    <input asp-for="Postort" type="text" class="form-control">
+                </div>
+            </div>
+          
+            <div class="form-group">
+                <label>Email</label>
+                <input asp-for="Email" type="text"  class="form-control">
+            </div>
+            <div class="form-group">
+                <label>Telefon</label>
+                <input asp-for="Telefon" type="text"  class="form-control">
+            </div>
+            <div class="form-group">
+                <label>Användarnamn</label>
+                <input asp-for="AnvandarNamn" type="text"  class="form-control">
+            </div>
+            <div class="form-group">
+                <label>Lösenord</label>
+                <input asp-for="Losenord" type="text" class="form-control">
+            </div>
+            <button type="submit" class="btn btn-lg btn-info">Submit</button>
+        </div>
+    </form>
