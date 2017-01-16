@@ -5,7 +5,7 @@ using System.Threading.Tasks;
 
 namespace PizzeriaWebAppASPNET_MVC_CORE.Models.ViewModels
 {
-    public class ShoppingCartViewModel : BaseViewModel
+    public class ShoppingCartViewModel 
     {
         public IEnumerable<Matratt> Matratter { get; set; }
         public CartSesssion CartSesssion { get; set; }

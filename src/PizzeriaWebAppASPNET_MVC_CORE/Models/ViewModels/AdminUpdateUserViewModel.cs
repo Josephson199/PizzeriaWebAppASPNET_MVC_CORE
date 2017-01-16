@@ -5,14 +5,10 @@ using System.Threading.Tasks;
 
 namespace PizzeriaWebAppASPNET_MVC_CORE.Models.ViewModels
 {
-    public class MenyViewModel
+    public class AdminUpdateUserViewModel
     {
-
-        public IEnumerable<MenyMaträtt> MenyMaträtter { get; set; }
-
-        
-
-
-
+        public Kund Kund { get; set; }
+        public ApplicationUser AspNetUser { get; set; }
+       
     }
 }

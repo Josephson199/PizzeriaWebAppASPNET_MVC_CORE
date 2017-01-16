@@ -5,6 +5,7 @@ using System.Threading.Tasks;
 using Microsoft.AspNetCore.Builder;
 using Microsoft.AspNetCore.Hosting;
 using Microsoft.AspNetCore.Http;
+using Microsoft.AspNetCore.Identity.EntityFrameworkCore;
 using Microsoft.Extensions.DependencyInjection;
 using Microsoft.Extensions.Logging;
 using PizzeriaWebAppASPNET_MVC_CORE.Models;
@@ -16,10 +17,15 @@ namespace PizzeriaWebAppASPNET_MVC_CORE
 {
     public class Startup
     {
-
+        public IConfigurationRoot Configuration { get; }
         public Startup(IHostingEnvironment env)
         {
-            
+            var builder = new ConfigurationBuilder()
+                .SetBasePath(env.ContentRootPath)
+                .AddJsonFile("appsettings.json", optional: true, reloadOnChange: true)
+                .AddJsonFile($"appsettings.{env.EnvironmentName}.json", optional: true)
+                .AddEnvironmentVariables();
+            Configuration = builder.Build();
         }
 
         // This method gets called by the runtime. Use this method to add services to the container.
@@ -31,8 +37,23 @@ namespace PizzeriaWebAppASPNET_MVC_CORE
             services.AddSession();
             services.AddTransient<EFDatabaseRepo>();
             
-            var connection = @"Server=LAPTOP-8HO4BK3G\SQLEXPRESS;Database=Tomasos;Trusted_Connection=True;";
-            services.AddDbContext<TomasosContext>(options => options.UseSqlServer(connection));
+         
+            services.AddDbContext<TomasosContext>(options => 
+                options.UseSqlServer(Configuration.GetConnectionString("DefaultConnection")));
+
+            services.AddDbContext<ApplicationDbContext>(options =>
+                options.UseSqlServer(Configuration.GetConnectionString("DefaultConnection")));
+
+            services.AddIdentity<ApplicationUser, IdentityRole>(opt =>
+                {
+                    opt.Password.RequireDigit = false;
+                    opt.Password.RequireLowercase = false;
+                    opt.Password.RequireUppercase = false;
+                    opt.Password.RequireNonAlphanumeric = false;
+                    opt.Password.RequiredLength = 6;
+                })
+                .AddEntityFrameworkStores<ApplicationDbContext>()
+                .AddDefaultTokenProviders();
         }
 
         // This method gets called by the runtime. Use this method to configure the HTTP request pipeline.
@@ -41,7 +62,7 @@ namespace PizzeriaWebAppASPNET_MVC_CORE
             app.UseSession();
             app.UseStaticFiles();
             app.UseStatusCodePages();
-            //app.UseSession();
+            app.UseIdentity();
             loggerFactory.AddConsole();
 
             if (env.IsDevelopment())

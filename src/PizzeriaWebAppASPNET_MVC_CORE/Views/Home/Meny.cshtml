@@ -3,9 +3,17 @@
 @model PizzeriaWebAppASPNET_MVC_CORE.Models.ViewModels.MenyViewModel
 @using System.Globalization
 
+
+
 @{
     CultureInfo swe = new CultureInfo("sv-SE");
 }
+
+
+
+
+
+
 
 <head>
     <link href="~/css/meny.css" rel="stylesheet" />
@@ -49,7 +57,7 @@
                                         </p>
                                     </div>
                                     <div class="col-xs-8  col-md-5">
-                                        <input class="btn btn-success" type="submit" value="Lägg till" />
+                                        <input id="btnAddFood" class="btn btn-success" type="submit" value="Lägg till" />
                                     </div>
                                 </div>
                             </div>
@@ -72,4 +80,4 @@
 
 
 
-                <script src="~/js/meny.js"></script>
+

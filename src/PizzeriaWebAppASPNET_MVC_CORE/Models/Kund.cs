@@ -1,6 +1,5 @@
 ﻿using System;
 using System.Collections.Generic;
-using System.ComponentModel;
 using System.ComponentModel.DataAnnotations;
 
 namespace PizzeriaWebAppASPNET_MVC_CORE.Models
@@ -14,8 +13,7 @@ namespace PizzeriaWebAppASPNET_MVC_CORE.Models
 
         public int KundId { get; set; }
         [Required(ErrorMessage = "Ange namn..")]
-        [StringLength(100,ErrorMessage = "Max 100 karaktärer..")]
-        
+        [StringLength(100, ErrorMessage = "Max 100 karaktärer..")]
         public string Namn { get; set; }
         [Required(ErrorMessage = "Ange gatuadress..")]
         [StringLength(50, ErrorMessage = "Max 50 karaktärer..")]
@@ -28,25 +26,12 @@ namespace PizzeriaWebAppASPNET_MVC_CORE.Models
         public string Postort { get; set; }
         [StringLength(50, ErrorMessage = "Max 50 karaktärer..")]
         [DataType(DataType.EmailAddress, ErrorMessage = "Fel format på email adress..")]
-        //[EmailAddress(ErrorMessage = "Fel format på email adress..")]
         public string Email { get; set; }
-        [StringLength(50, ErrorMessage = "Max 50 karaktärer..")]
-        [DataType(DataType.PhoneNumber)]
         public string Telefon { get; set; }
-        [Required(ErrorMessage = "Ange användarnamn..")]
-        [StringLength(20, ErrorMessage = "Max 20 karaktärer..")]
-        [RegularExpression("^[^<>.!@#%/]+$",ErrorMessage = "Dessa symboler är förbjudna(^<>.!@#%/)")]
-        
-        public string AnvandarNamn { get; set; }
-        [Required(ErrorMessage = "Ange lösenord..")]
-        [StringLength(20, ErrorMessage = "Max 20 karaktärer..")]
-        [DataType(DataType.Password)]
-       
-        public string Losenord { get; set; }
-        //[Required]
-        //[Compare("Losenord",ErrorMessage = "Lösenordet måste stämma överens...")]
-        //public string ComparePassword { get; set; }
+        public string UserId { get; set; }
+        public string Points { get; set; }     
 
         public virtual ICollection<Bestallning> Bestallning { get; set; }
+        public virtual AspNetUsers User { get; set; }
     }
 }

@@ -1,5 +1,5 @@
---temp-output:C:\Users\Mattias\Documents\Visual Studio 2015\Projects\PizzeriaWebAppASPNET_MVC_CORE\src\PizzeriaWebAppASPNET_MVC_CORE\obj\Debug\netcoreapp1.0\
---out:C:\Users\Mattias\Documents\Visual Studio 2015\Projects\PizzeriaWebAppASPNET_MVC_CORE\src\PizzeriaWebAppASPNET_MVC_CORE\bin\Debug\netcoreapp1.0\PizzeriaWebAppASPNET_MVC_CORE.dll
+--temp-output:C:\Users\Mattias\OneDrive\Documents\My Projects\PizzeriaWebAppASPNET_MVC_CORE\src\PizzeriaWebAppASPNET_MVC_CORE\obj\Debug\netcoreapp1.0\
+--out:C:\Users\Mattias\OneDrive\Documents\My Projects\PizzeriaWebAppASPNET_MVC_CORE\src\PizzeriaWebAppASPNET_MVC_CORE\bin\Debug\netcoreapp1.0\PizzeriaWebAppASPNET_MVC_CORE.dll
 --define:DEBUG
 --define:TRACE
 --define:NETCOREAPP1_0
@@ -202,29 +202,45 @@
 --reference:C:\Users\Mattias\.nuget\packages\System.Threading.Timer\4.0.1\ref\netstandard1.2\System.Threading.Timer.dll
 --reference:C:\Users\Mattias\.nuget\packages\System.Xml.ReaderWriter\4.0.11\ref\netstandard1.3\System.Xml.ReaderWriter.dll
 --reference:C:\Users\Mattias\.nuget\packages\System.Xml.XDocument\4.0.11\ref\netstandard1.3\System.Xml.XDocument.dll
---resource:"C:\Users\Mattias\Documents\Visual Studio 2015\Projects\PizzeriaWebAppASPNET_MVC_CORE\src\PizzeriaWebAppASPNET_MVC_CORE\obj\Debug\netcoreapp1.0\PizzeriaWebAppASPNET_MVC_COREdotnet-compile.deps.json",PizzeriaWebAppASPNET_MVC_CORE.deps.json
-C:\Users\Mattias\Documents\Visual Studio 2015\Projects\PizzeriaWebAppASPNET_MVC_CORE\src\PizzeriaWebAppASPNET_MVC_CORE\Program.cs
-C:\Users\Mattias\Documents\Visual Studio 2015\Projects\PizzeriaWebAppASPNET_MVC_CORE\src\PizzeriaWebAppASPNET_MVC_CORE\Startup.cs
-C:\Users\Mattias\Documents\Visual Studio 2015\Projects\PizzeriaWebAppASPNET_MVC_CORE\src\PizzeriaWebAppASPNET_MVC_CORE\Controllers\HomeController.cs
-C:\Users\Mattias\Documents\Visual Studio 2015\Projects\PizzeriaWebAppASPNET_MVC_CORE\src\PizzeriaWebAppASPNET_MVC_CORE\Controllers\ShoppingCartController.cs
-C:\Users\Mattias\Documents\Visual Studio 2015\Projects\PizzeriaWebAppASPNET_MVC_CORE\src\PizzeriaWebAppASPNET_MVC_CORE\Controllers\UserController.cs
-C:\Users\Mattias\Documents\Visual Studio 2015\Projects\PizzeriaWebAppASPNET_MVC_CORE\src\PizzeriaWebAppASPNET_MVC_CORE\Extensions\SessionExtensions.cs
-C:\Users\Mattias\Documents\Visual Studio 2015\Projects\PizzeriaWebAppASPNET_MVC_CORE\src\PizzeriaWebAppASPNET_MVC_CORE\Models\AppIdentityDbContext.cs
-C:\Users\Mattias\Documents\Visual Studio 2015\Projects\PizzeriaWebAppASPNET_MVC_CORE\src\PizzeriaWebAppASPNET_MVC_CORE\Models\AppUser.cs
-C:\Users\Mattias\Documents\Visual Studio 2015\Projects\PizzeriaWebAppASPNET_MVC_CORE\src\PizzeriaWebAppASPNET_MVC_CORE\Models\Bestallning.cs
-C:\Users\Mattias\Documents\Visual Studio 2015\Projects\PizzeriaWebAppASPNET_MVC_CORE\src\PizzeriaWebAppASPNET_MVC_CORE\Models\BestallningMatratt.cs
-C:\Users\Mattias\Documents\Visual Studio 2015\Projects\PizzeriaWebAppASPNET_MVC_CORE\src\PizzeriaWebAppASPNET_MVC_CORE\Models\CartSesssion.cs
-C:\Users\Mattias\Documents\Visual Studio 2015\Projects\PizzeriaWebAppASPNET_MVC_CORE\src\PizzeriaWebAppASPNET_MVC_CORE\Models\EFDatabaseRepo.cs
-C:\Users\Mattias\Documents\Visual Studio 2015\Projects\PizzeriaWebAppASPNET_MVC_CORE\src\PizzeriaWebAppASPNET_MVC_CORE\Models\IDatabaseRepo.cs
-C:\Users\Mattias\Documents\Visual Studio 2015\Projects\PizzeriaWebAppASPNET_MVC_CORE\src\PizzeriaWebAppASPNET_MVC_CORE\Models\Kund.cs
-C:\Users\Mattias\Documents\Visual Studio 2015\Projects\PizzeriaWebAppASPNET_MVC_CORE\src\PizzeriaWebAppASPNET_MVC_CORE\Models\Matratt.cs
-C:\Users\Mattias\Documents\Visual Studio 2015\Projects\PizzeriaWebAppASPNET_MVC_CORE\src\PizzeriaWebAppASPNET_MVC_CORE\Models\MatrattProdukt.cs
-C:\Users\Mattias\Documents\Visual Studio 2015\Projects\PizzeriaWebAppASPNET_MVC_CORE\src\PizzeriaWebAppASPNET_MVC_CORE\Models\MatrattTyp.cs
-C:\Users\Mattias\Documents\Visual Studio 2015\Projects\PizzeriaWebAppASPNET_MVC_CORE\src\PizzeriaWebAppASPNET_MVC_CORE\Models\MenyMaträtt.cs
-C:\Users\Mattias\Documents\Visual Studio 2015\Projects\PizzeriaWebAppASPNET_MVC_CORE\src\PizzeriaWebAppASPNET_MVC_CORE\Models\Produkt.cs
-C:\Users\Mattias\Documents\Visual Studio 2015\Projects\PizzeriaWebAppASPNET_MVC_CORE\src\PizzeriaWebAppASPNET_MVC_CORE\Models\TomasosContext.cs
-C:\Users\Mattias\Documents\Visual Studio 2015\Projects\PizzeriaWebAppASPNET_MVC_CORE\src\PizzeriaWebAppASPNET_MVC_CORE\Models\ViewModels\BaseViewModel.cs
-C:\Users\Mattias\Documents\Visual Studio 2015\Projects\PizzeriaWebAppASPNET_MVC_CORE\src\PizzeriaWebAppASPNET_MVC_CORE\Models\ViewModels\MenyViewModel.cs
-C:\Users\Mattias\Documents\Visual Studio 2015\Projects\PizzeriaWebAppASPNET_MVC_CORE\src\PizzeriaWebAppASPNET_MVC_CORE\Models\ViewModels\RegisterViewModel.cs
-C:\Users\Mattias\Documents\Visual Studio 2015\Projects\PizzeriaWebAppASPNET_MVC_CORE\src\PizzeriaWebAppASPNET_MVC_CORE\Models\ViewModels\ShoppingCartViewModel.cs
-C:\Users\Mattias\Documents\Visual Studio 2015\Projects\PizzeriaWebAppASPNET_MVC_CORE\src\PizzeriaWebAppASPNET_MVC_CORE\Models\ViewModels\UpdateUserViewModel.cs
+--resource:"C:\Users\Mattias\OneDrive\Documents\My Projects\PizzeriaWebAppASPNET_MVC_CORE\src\PizzeriaWebAppASPNET_MVC_CORE\obj\Debug\netcoreapp1.0\PizzeriaWebAppASPNET_MVC_COREdotnet-compile.deps.json",PizzeriaWebAppASPNET_MVC_CORE.deps.json
+C:\Users\Mattias\OneDrive\Documents\My Projects\PizzeriaWebAppASPNET_MVC_CORE\src\PizzeriaWebAppASPNET_MVC_CORE\Program.cs
+C:\Users\Mattias\OneDrive\Documents\My Projects\PizzeriaWebAppASPNET_MVC_CORE\src\PizzeriaWebAppASPNET_MVC_CORE\Startup.cs
+C:\Users\Mattias\OneDrive\Documents\My Projects\PizzeriaWebAppASPNET_MVC_CORE\src\PizzeriaWebAppASPNET_MVC_CORE\Controllers\AccountController.cs
+C:\Users\Mattias\OneDrive\Documents\My Projects\PizzeriaWebAppASPNET_MVC_CORE\src\PizzeriaWebAppASPNET_MVC_CORE\Controllers\AdminController.cs
+C:\Users\Mattias\OneDrive\Documents\My Projects\PizzeriaWebAppASPNET_MVC_CORE\src\PizzeriaWebAppASPNET_MVC_CORE\Controllers\HomeController.cs
+C:\Users\Mattias\OneDrive\Documents\My Projects\PizzeriaWebAppASPNET_MVC_CORE\src\PizzeriaWebAppASPNET_MVC_CORE\Controllers\ShoppingCartController.cs
+C:\Users\Mattias\OneDrive\Documents\My Projects\PizzeriaWebAppASPNET_MVC_CORE\src\PizzeriaWebAppASPNET_MVC_CORE\Extensions\SessionExtensions.cs
+C:\Users\Mattias\OneDrive\Documents\My Projects\PizzeriaWebAppASPNET_MVC_CORE\src\PizzeriaWebAppASPNET_MVC_CORE\Infrastructure\RoleUsersTagHelper.cs
+C:\Users\Mattias\OneDrive\Documents\My Projects\PizzeriaWebAppASPNET_MVC_CORE\src\PizzeriaWebAppASPNET_MVC_CORE\Infrastructure\ValidateActionParametersAttribute.cs
+C:\Users\Mattias\OneDrive\Documents\My Projects\PizzeriaWebAppASPNET_MVC_CORE\src\PizzeriaWebAppASPNET_MVC_CORE\Migrations\20170112100915_AddingIdentityContext.cs
+C:\Users\Mattias\OneDrive\Documents\My Projects\PizzeriaWebAppASPNET_MVC_CORE\src\PizzeriaWebAppASPNET_MVC_CORE\Migrations\20170112100915_AddingIdentityContext.Designer.cs
+C:\Users\Mattias\OneDrive\Documents\My Projects\PizzeriaWebAppASPNET_MVC_CORE\src\PizzeriaWebAppASPNET_MVC_CORE\Migrations\ApplicationDbContextModelSnapshot.cs
+C:\Users\Mattias\OneDrive\Documents\My Projects\PizzeriaWebAppASPNET_MVC_CORE\src\PizzeriaWebAppASPNET_MVC_CORE\Models\ApplicationDbContext.cs
+C:\Users\Mattias\OneDrive\Documents\My Projects\PizzeriaWebAppASPNET_MVC_CORE\src\PizzeriaWebAppASPNET_MVC_CORE\Models\ApplicationUser.cs
+C:\Users\Mattias\OneDrive\Documents\My Projects\PizzeriaWebAppASPNET_MVC_CORE\src\PizzeriaWebAppASPNET_MVC_CORE\Models\AspNetRoleClaims.cs
+C:\Users\Mattias\OneDrive\Documents\My Projects\PizzeriaWebAppASPNET_MVC_CORE\src\PizzeriaWebAppASPNET_MVC_CORE\Models\AspNetRoles.cs
+C:\Users\Mattias\OneDrive\Documents\My Projects\PizzeriaWebAppASPNET_MVC_CORE\src\PizzeriaWebAppASPNET_MVC_CORE\Models\AspNetUserClaims.cs
+C:\Users\Mattias\OneDrive\Documents\My Projects\PizzeriaWebAppASPNET_MVC_CORE\src\PizzeriaWebAppASPNET_MVC_CORE\Models\AspNetUserLogins.cs
+C:\Users\Mattias\OneDrive\Documents\My Projects\PizzeriaWebAppASPNET_MVC_CORE\src\PizzeriaWebAppASPNET_MVC_CORE\Models\AspNetUserRoles.cs
+C:\Users\Mattias\OneDrive\Documents\My Projects\PizzeriaWebAppASPNET_MVC_CORE\src\PizzeriaWebAppASPNET_MVC_CORE\Models\AspNetUsers.cs
+C:\Users\Mattias\OneDrive\Documents\My Projects\PizzeriaWebAppASPNET_MVC_CORE\src\PizzeriaWebAppASPNET_MVC_CORE\Models\AspNetUserTokens.cs
+C:\Users\Mattias\OneDrive\Documents\My Projects\PizzeriaWebAppASPNET_MVC_CORE\src\PizzeriaWebAppASPNET_MVC_CORE\Models\Bestallning.cs
+C:\Users\Mattias\OneDrive\Documents\My Projects\PizzeriaWebAppASPNET_MVC_CORE\src\PizzeriaWebAppASPNET_MVC_CORE\Models\BestallningMatratt.cs
+C:\Users\Mattias\OneDrive\Documents\My Projects\PizzeriaWebAppASPNET_MVC_CORE\src\PizzeriaWebAppASPNET_MVC_CORE\Models\CartSesssion.cs
+C:\Users\Mattias\OneDrive\Documents\My Projects\PizzeriaWebAppASPNET_MVC_CORE\src\PizzeriaWebAppASPNET_MVC_CORE\Models\EFDatabaseRepo.cs
+C:\Users\Mattias\OneDrive\Documents\My Projects\PizzeriaWebAppASPNET_MVC_CORE\src\PizzeriaWebAppASPNET_MVC_CORE\Models\IDatabaseRepo.cs
+C:\Users\Mattias\OneDrive\Documents\My Projects\PizzeriaWebAppASPNET_MVC_CORE\src\PizzeriaWebAppASPNET_MVC_CORE\Models\Kund.cs
+C:\Users\Mattias\OneDrive\Documents\My Projects\PizzeriaWebAppASPNET_MVC_CORE\src\PizzeriaWebAppASPNET_MVC_CORE\Models\Matratt.cs
+C:\Users\Mattias\OneDrive\Documents\My Projects\PizzeriaWebAppASPNET_MVC_CORE\src\PizzeriaWebAppASPNET_MVC_CORE\Models\MatrattProdukt.cs
+C:\Users\Mattias\OneDrive\Documents\My Projects\PizzeriaWebAppASPNET_MVC_CORE\src\PizzeriaWebAppASPNET_MVC_CORE\Models\MatrattTyp.cs
+C:\Users\Mattias\OneDrive\Documents\My Projects\PizzeriaWebAppASPNET_MVC_CORE\src\PizzeriaWebAppASPNET_MVC_CORE\Models\MenyMaträtt.cs
+C:\Users\Mattias\OneDrive\Documents\My Projects\PizzeriaWebAppASPNET_MVC_CORE\src\PizzeriaWebAppASPNET_MVC_CORE\Models\Produkt.cs
+C:\Users\Mattias\OneDrive\Documents\My Projects\PizzeriaWebAppASPNET_MVC_CORE\src\PizzeriaWebAppASPNET_MVC_CORE\Models\TomasosContext.cs
+C:\Users\Mattias\OneDrive\Documents\My Projects\PizzeriaWebAppASPNET_MVC_CORE\src\PizzeriaWebAppASPNET_MVC_CORE\Models\ViewModels\AdminUpdateUserViewModel.cs
+C:\Users\Mattias\OneDrive\Documents\My Projects\PizzeriaWebAppASPNET_MVC_CORE\src\PizzeriaWebAppASPNET_MVC_CORE\Models\ViewModels\AdminViewModel.cs
+C:\Users\Mattias\OneDrive\Documents\My Projects\PizzeriaWebAppASPNET_MVC_CORE\src\PizzeriaWebAppASPNET_MVC_CORE\Models\ViewModels\CheckOutViewModel.cs
+C:\Users\Mattias\OneDrive\Documents\My Projects\PizzeriaWebAppASPNET_MVC_CORE\src\PizzeriaWebAppASPNET_MVC_CORE\Models\ViewModels\MenyViewModel.cs
+C:\Users\Mattias\OneDrive\Documents\My Projects\PizzeriaWebAppASPNET_MVC_CORE\src\PizzeriaWebAppASPNET_MVC_CORE\Models\ViewModels\RegisterViewModel.cs
+C:\Users\Mattias\OneDrive\Documents\My Projects\PizzeriaWebAppASPNET_MVC_CORE\src\PizzeriaWebAppASPNET_MVC_CORE\Models\ViewModels\ShoppingCartViewModel.cs
+C:\Users\Mattias\OneDrive\Documents\My Projects\PizzeriaWebAppASPNET_MVC_CORE\src\PizzeriaWebAppASPNET_MVC_CORE\Models\ViewModels\UpdateUserViewModel.cs
+C:\Users\Mattias\OneDrive\Documents\My Projects\PizzeriaWebAppASPNET_MVC_CORE\src\PizzeriaWebAppASPNET_MVC_CORE\Models\ViewModels\UserViewModel.cs

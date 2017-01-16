@@ -47,7 +47,7 @@
                             <td data-th="Price">@maträtt.Pris.ToString("C", swe)</td>
 
                             <td class="actions" data-th="">
-                                <button class="btn btn-danger btn-sm"><i class="fa fa-trash-o"></i></button>
+                                <a asp-controller="ShoppingCart" asp-action="RemoveFromCart" asp-route-id="@maträtt.MatrattId" class="btn btn-danger btn-sm"><i class="fa fa-trash-o"></i></a>
                             </td>
                         </tr>
                     </tbody>
@@ -62,7 +62,26 @@
             <tr>
                 <td><a asp-controller="Home" asp-action="Meny" class="btn btn-warning"><i class="fa fa-angle-left"></i> Continue Shopping</a></td>
                 <td class="hidden-xs text-center"><strong>@sum.ToString("C", swe)</strong></td>
-                <td><a asp-controller="ShoppingCart" asp-action="Checkout" class="btn btn-success btn-block">Checkout <i class="fa fa-angle-right"></i></a></td>
+                @{
+                    if (SignInManager.IsSignedIn(User))
+                    {
+                        var cartSession = Context.Session.GetObjectFromJson<CartSesssion>("CartSession");
+
+                       
+                            if (cartSession?.Maträtter.Count > 0)
+                            {
+                                <td><a asp-controller="ShoppingCart" asp-action="Checkout" class="btn btn-success btn-block">Checkout<i class="fa fa-angle-right"></i></a></td>
+                            }
+
+                        
+
+                    }
+                    else
+                    {
+                        <td><a class="btn btn-warning btn-block">Checkout(Please Log in or register)<i class="fa fa-angle-right"></i></a></td>
+                    }
+                }
+                
             </tr>
         </tfoot>
     </table>

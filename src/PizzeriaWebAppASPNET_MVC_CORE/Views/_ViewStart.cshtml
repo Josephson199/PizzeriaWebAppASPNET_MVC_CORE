@@ -1,18 +1,3 @@
-﻿@using System.Threading.Tasks
-@using Microsoft.AspNetCore.Http
-@{
-
-    var status = Html.ViewContext.HttpContext.Session.GetString("Status");
-    string layout = "_Layout";
-
-    if (status != null)
-    {
-        if (status == "active")
-        {
-            layout = "_LayoutUser";
-        }
-        
-    }
-
-    Layout = layout;
+﻿@{
+    Layout = "_Layout";
 }

@@ -5,9 +5,10 @@ using System.Threading.Tasks;
 
 namespace PizzeriaWebAppASPNET_MVC_CORE.Models.ViewModels
 {
-    public class BaseViewModel
+    public class CheckOutViewModel 
     {
-        public string LoginAnvändarnamn { get; set; }
-        public string LoginLösenord { get; set; }
+        public IEnumerable<Matratt> Matratter { get; set; }
+
+        public Kund Kund { get; set; }
     }
 }

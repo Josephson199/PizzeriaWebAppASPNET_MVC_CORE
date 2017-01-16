@@ -5,13 +5,12 @@ using System.Threading.Tasks;
 
 namespace PizzeriaWebAppASPNET_MVC_CORE.Models.ViewModels
 {
-    public class MenyViewModel
+
+    public class UserViewModel 
     {
+        public IEnumerable<Kund> Kunder { get; set; }
 
-        public IEnumerable<MenyMaträtt> MenyMaträtter { get; set; }
-
-        
-
+      
 
 
     }

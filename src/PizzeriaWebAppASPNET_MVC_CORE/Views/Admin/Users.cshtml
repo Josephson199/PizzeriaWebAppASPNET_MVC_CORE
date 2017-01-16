@@ -1,0 +1,49 @@
+﻿@model PizzeriaWebAppASPNET_MVC_CORE.Models.ViewModels.UserViewModel
+
+<div class="row">
+    <div class="col-lg-6">
+
+        <div class="bg-primary panel-body">
+            <h4>Users</h4>
+        </div>
+        <table style="background-color: white" class="table table-bordered table-condensed">
+            @if (Model.Kunder.Count() <= 0)
+            {
+                <tr><td colspan="2">No users</td></tr>
+            }
+            else
+            {
+                <thead>
+                    <tr>
+                        <th>Id</th>
+                        <th>Namn</th>
+                        <th>Email</th>
+                    </tr>
+                </thead>
+                foreach (var kund in Model.Kunder)
+                {
+                    <tr>
+                        <td>@kund.KundId</td>
+                        <td>@kund.Namn</td>
+                        <td>@kund.Email</td>
+                        <td>
+                            <a asp-controller="Admin"
+                               asp-action="EditUserPartial"
+                               asp-route-kundId="@kund.KundId"
+                               data-ajax="true"
+                               data-ajax-method="GET"
+                               data-ajax-mode="replace"
+                               data-ajax-update="#updateUser">
+                                Edit
+                            </a>
+                        </td>
+
+                    </tr>
+                }
+            }
+        </table>
+    </div>
+
+    <div class="col-lg-6" id="updateUser"></div>
+
+</div>

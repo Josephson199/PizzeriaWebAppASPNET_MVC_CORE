@@ -3,8 +3,8 @@
 
 body {
     
-    background-repeat: no-repeat;
-    margin: 0;
     background-image: url('../lib/images/layoutbackground.jpg');
+    background-size: 100%;
+   
 }
 
