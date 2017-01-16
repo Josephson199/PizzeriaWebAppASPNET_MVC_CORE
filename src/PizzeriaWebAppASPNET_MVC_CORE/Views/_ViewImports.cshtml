@@ -1,5 +1,15 @@
-﻿@using PizzeriaWebAppASPNET_MVC_CORE.Models
+﻿@using System.Threading.Tasks
+@using PizzeriaWebAppASPNET_MVC_CORE.Models
 @addTagHelper *, Microsoft.AspNetCore.Mvc.Taghelpers
+sing Microsoft.AspNetCore.Identity
+@model PizzeriaWebAppASPNET_MVC_CORE.Models.ViewModels.BaseViewModel
+@using Microsoft.AspNetCore.Http;
+@using Microsoft.AspNetCore.Identity
+@using PizzeriaWebAppASPNET_MVC_CORE.Extensions;
+@addTagHelper PizzeriaWebAppASPNET_MVC_CORE.Infrastructure.*, PizzeriaWebAppASPNET_MVC_CORE
+@inject SignInManager<ApplicationUser> SignInManager;
+@inject UserManager<ApplicationUser> UserManager;
+
 
 
 

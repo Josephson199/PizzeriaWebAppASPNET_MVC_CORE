@@ -1,5 +1,5 @@
---temp-output:C:\Users\Mattias\Documents\Visual Studio 2015\Projects\PizzeriaWebAppASPNET_MVC_CORE\src\PizzeriaWebAppASPNET_MVC_CORE\obj\Debug\netcoreapp1.0\
---out:C:\Users\Mattias\Documents\Visual Studio 2015\Projects\PizzeriaWebAppASPNET_MVC_CORE\src\PizzeriaWebAppASPNET_MVC_CORE\bin\Debug\netcoreapp1.0\PizzeriaWebAppASPNET_MVC_CORE.dll
+--temp-output:C:\Users\Mattias\OneDrive\Documents\My Projects\PizzeriaWebAppASPNET_MVC_CORE\src\PizzeriaWebAppASPNET_MVC_CORE\obj\Debug\netcoreapp1.0\
+--out:C:\Users\Mattias\OneDrive\Documents\My Projects\PizzeriaWebAppASPNET_MVC_CORE\src\PizzeriaWebAppASPNET_MVC_CORE\bin\Debug\netcoreapp1.0\PizzeriaWebAppASPNET_MVC_CORE.dll
 --define:DEBUG
 --define:TRACE
 --define:NETCOREAPP1_0
@@ -14,9 +14,12 @@
 --informational-version:1.0.0
 --target-framework:.NETCoreApp,Version=v1.0
 --reference:C:\Users\Mattias\.nuget\packages\Microsoft.AspNetCore.Antiforgery\1.0.0\lib\netstandard1.3\Microsoft.AspNetCore.Antiforgery.dll
+--reference:C:\Users\Mattias\.nuget\packages\Microsoft.AspNetCore.Authentication\1.0.0\lib\netstandard1.3\Microsoft.AspNetCore.Authentication.dll
+--reference:C:\Users\Mattias\.nuget\packages\Microsoft.AspNetCore.Authentication.Cookies\1.0.0\lib\netstandard1.3\Microsoft.AspNetCore.Authentication.Cookies.dll
 --reference:C:\Users\Mattias\.nuget\packages\Microsoft.AspNetCore.Authorization\1.0.0\lib\netstandard1.3\Microsoft.AspNetCore.Authorization.dll
 --reference:C:\Users\Mattias\.nuget\packages\Microsoft.AspNetCore.Cors\1.0.0\lib\netstandard1.3\Microsoft.AspNetCore.Cors.dll
 --reference:C:\Users\Mattias\.nuget\packages\Microsoft.AspNetCore.Cryptography.Internal\1.0.0\lib\netstandard1.3\Microsoft.AspNetCore.Cryptography.Internal.dll
+--reference:C:\Users\Mattias\.nuget\packages\Microsoft.AspNetCore.Cryptography.KeyDerivation\1.0.0\lib\netstandard1.3\Microsoft.AspNetCore.Cryptography.KeyDerivation.dll
 --reference:C:\Users\Mattias\.nuget\packages\Microsoft.AspNetCore.DataProtection\1.0.0\lib\netstandard1.3\Microsoft.AspNetCore.DataProtection.dll
 --reference:C:\Users\Mattias\.nuget\packages\Microsoft.AspNetCore.DataProtection.Abstractions\1.0.0\lib\netstandard1.3\Microsoft.AspNetCore.DataProtection.Abstractions.dll
 --reference:C:\Users\Mattias\.nuget\packages\Microsoft.AspNetCore.Diagnostics\1.0.0\lib\netstandard1.3\Microsoft.AspNetCore.Diagnostics.dll
@@ -30,6 +33,8 @@
 --reference:C:\Users\Mattias\.nuget\packages\Microsoft.AspNetCore.Http.Extensions\1.0.0\lib\netstandard1.3\Microsoft.AspNetCore.Http.Extensions.dll
 --reference:C:\Users\Mattias\.nuget\packages\Microsoft.AspNetCore.Http.Features\1.0.0\lib\netstandard1.3\Microsoft.AspNetCore.Http.Features.dll
 --reference:C:\Users\Mattias\.nuget\packages\Microsoft.AspNetCore.HttpOverrides\1.0.0\lib\netstandard1.3\Microsoft.AspNetCore.HttpOverrides.dll
+--reference:C:\Users\Mattias\.nuget\packages\Microsoft.AspNetCore.Identity\1.0.0\lib\netstandard1.3\Microsoft.AspNetCore.Identity.dll
+--reference:C:\Users\Mattias\.nuget\packages\Microsoft.AspNetCore.Identity.EntityFrameworkCore\1.0.0\lib\netstandard1.3\Microsoft.AspNetCore.Identity.EntityFrameworkCore.dll
 --reference:C:\Users\Mattias\.nuget\packages\Microsoft.AspNetCore.JsonPatch\1.0.0\lib\netstandard1.1\Microsoft.AspNetCore.JsonPatch.dll
 --reference:C:\Users\Mattias\.nuget\packages\Microsoft.AspNetCore.Localization\1.0.0\lib\netstandard1.3\Microsoft.AspNetCore.Localization.dll
 --reference:C:\Users\Mattias\.nuget\packages\Microsoft.AspNetCore.Mvc\1.0.0\lib\netstandard1.6\Microsoft.AspNetCore.Mvc.dll
@@ -51,6 +56,7 @@
 --reference:C:\Users\Mattias\.nuget\packages\Microsoft.AspNetCore.Routing.Abstractions\1.0.0\lib\netstandard1.3\Microsoft.AspNetCore.Routing.Abstractions.dll
 --reference:C:\Users\Mattias\.nuget\packages\Microsoft.AspNetCore.Server.IISIntegration\1.0.0\lib\netstandard1.3\Microsoft.AspNetCore.Server.IISIntegration.dll
 --reference:C:\Users\Mattias\.nuget\packages\Microsoft.AspNetCore.Server.Kestrel\1.0.1\lib\netstandard1.3\Microsoft.AspNetCore.Server.Kestrel.dll
+--reference:C:\Users\Mattias\.nuget\packages\Microsoft.AspNetCore.Session\1.0.0\lib\netstandard1.3\Microsoft.AspNetCore.Session.dll
 --reference:C:\Users\Mattias\.nuget\packages\Microsoft.AspNetCore.StaticFiles\1.0.0\lib\netstandard1.3\Microsoft.AspNetCore.StaticFiles.dll
 --reference:C:\Users\Mattias\.nuget\packages\Microsoft.AspNetCore.WebUtilities\1.0.0\lib\netstandard1.3\Microsoft.AspNetCore.WebUtilities.dll
 --reference:C:\Users\Mattias\.nuget\packages\Microsoft.CodeAnalysis.Common\1.3.0\lib\netstandard1.3\Microsoft.CodeAnalysis.dll
@@ -72,6 +78,8 @@
 --reference:C:\Users\Mattias\.nuget\packages\Microsoft.Extensions.Configuration\1.0.0\lib\netstandard1.1\Microsoft.Extensions.Configuration.dll
 --reference:C:\Users\Mattias\.nuget\packages\Microsoft.Extensions.Configuration.Abstractions\1.0.0\lib\netstandard1.0\Microsoft.Extensions.Configuration.Abstractions.dll
 --reference:C:\Users\Mattias\.nuget\packages\Microsoft.Extensions.Configuration.EnvironmentVariables\1.0.0\lib\netstandard1.3\Microsoft.Extensions.Configuration.EnvironmentVariables.dll
+--reference:C:\Users\Mattias\.nuget\packages\Microsoft.Extensions.Configuration.FileExtensions\1.0.0\lib\netstandard1.3\Microsoft.Extensions.Configuration.FileExtensions.dll
+--reference:C:\Users\Mattias\.nuget\packages\Microsoft.Extensions.Configuration.Json\1.0.0\lib\netstandard1.3\Microsoft.Extensions.Configuration.Json.dll
 --reference:C:\Users\Mattias\.nuget\packages\Microsoft.Extensions.DependencyInjection\1.0.0\lib\netstandard1.1\Microsoft.Extensions.DependencyInjection.dll
 --reference:C:\Users\Mattias\.nuget\packages\Microsoft.Extensions.DependencyInjection.Abstractions\1.0.0\lib\netstandard1.0\Microsoft.Extensions.DependencyInjection.Abstractions.dll
 --reference:C:\Users\Mattias\.nuget\packages\Microsoft.Extensions.DependencyModel\1.0.0\lib\netstandard1.6\Microsoft.Extensions.DependencyModel.dll
@@ -194,18 +202,45 @@
 --reference:C:\Users\Mattias\.nuget\packages\System.Threading.Timer\4.0.1\ref\netstandard1.2\System.Threading.Timer.dll
 --reference:C:\Users\Mattias\.nuget\packages\System.Xml.ReaderWriter\4.0.11\ref\netstandard1.3\System.Xml.ReaderWriter.dll
 --reference:C:\Users\Mattias\.nuget\packages\System.Xml.XDocument\4.0.11\ref\netstandard1.3\System.Xml.XDocument.dll
---resource:"C:\Users\Mattias\Documents\Visual Studio 2015\Projects\PizzeriaWebAppASPNET_MVC_CORE\src\PizzeriaWebAppASPNET_MVC_CORE\obj\Debug\netcoreapp1.0\PizzeriaWebAppASPNET_MVC_COREdotnet-compile.deps.json",PizzeriaWebAppASPNET_MVC_CORE.deps.json
-C:\Users\Mattias\Documents\Visual Studio 2015\Projects\PizzeriaWebAppASPNET_MVC_CORE\src\PizzeriaWebAppASPNET_MVC_CORE\Program.cs
-C:\Users\Mattias\Documents\Visual Studio 2015\Projects\PizzeriaWebAppASPNET_MVC_CORE\src\PizzeriaWebAppASPNET_MVC_CORE\Startup.cs
-C:\Users\Mattias\Documents\Visual Studio 2015\Projects\PizzeriaWebAppASPNET_MVC_CORE\src\PizzeriaWebAppASPNET_MVC_CORE\Controllers\HomeController.cs
-C:\Users\Mattias\Documents\Visual Studio 2015\Projects\PizzeriaWebAppASPNET_MVC_CORE\src\PizzeriaWebAppASPNET_MVC_CORE\Controllers\ShoppingCartController.cs
-C:\Users\Mattias\Documents\Visual Studio 2015\Projects\PizzeriaWebAppASPNET_MVC_CORE\src\PizzeriaWebAppASPNET_MVC_CORE\Models\Bestallning.cs
-C:\Users\Mattias\Documents\Visual Studio 2015\Projects\PizzeriaWebAppASPNET_MVC_CORE\src\PizzeriaWebAppASPNET_MVC_CORE\Models\BestallningMatratt.cs
-C:\Users\Mattias\Documents\Visual Studio 2015\Projects\PizzeriaWebAppASPNET_MVC_CORE\src\PizzeriaWebAppASPNET_MVC_CORE\Models\EFDatabaseRepo.cs
-C:\Users\Mattias\Documents\Visual Studio 2015\Projects\PizzeriaWebAppASPNET_MVC_CORE\src\PizzeriaWebAppASPNET_MVC_CORE\Models\IDatabaseRepo.cs
-C:\Users\Mattias\Documents\Visual Studio 2015\Projects\PizzeriaWebAppASPNET_MVC_CORE\src\PizzeriaWebAppASPNET_MVC_CORE\Models\Kund.cs
-C:\Users\Mattias\Documents\Visual Studio 2015\Projects\PizzeriaWebAppASPNET_MVC_CORE\src\PizzeriaWebAppASPNET_MVC_CORE\Models\Matratt.cs
-C:\Users\Mattias\Documents\Visual Studio 2015\Projects\PizzeriaWebAppASPNET_MVC_CORE\src\PizzeriaWebAppASPNET_MVC_CORE\Models\MatrattProdukt.cs
-C:\Users\Mattias\Documents\Visual Studio 2015\Projects\PizzeriaWebAppASPNET_MVC_CORE\src\PizzeriaWebAppASPNET_MVC_CORE\Models\MatrattTyp.cs
-C:\Users\Mattias\Documents\Visual Studio 2015\Projects\PizzeriaWebAppASPNET_MVC_CORE\src\PizzeriaWebAppASPNET_MVC_CORE\Models\Produkt.cs
-C:\Users\Mattias\Documents\Visual Studio 2015\Projects\PizzeriaWebAppASPNET_MVC_CORE\src\PizzeriaWebAppASPNET_MVC_CORE\Models\TomasosContext.cs
+--resource:"C:\Users\Mattias\OneDrive\Documents\My Projects\PizzeriaWebAppASPNET_MVC_CORE\src\PizzeriaWebAppASPNET_MVC_CORE\obj\Debug\netcoreapp1.0\PizzeriaWebAppASPNET_MVC_COREdotnet-compile.deps.json",PizzeriaWebAppASPNET_MVC_CORE.deps.json
+C:\Users\Mattias\OneDrive\Documents\My Projects\PizzeriaWebAppASPNET_MVC_CORE\src\PizzeriaWebAppASPNET_MVC_CORE\Program.cs
+C:\Users\Mattias\OneDrive\Documents\My Projects\PizzeriaWebAppASPNET_MVC_CORE\src\PizzeriaWebAppASPNET_MVC_CORE\Startup.cs
+C:\Users\Mattias\OneDrive\Documents\My Projects\PizzeriaWebAppASPNET_MVC_CORE\src\PizzeriaWebAppASPNET_MVC_CORE\Controllers\AccountController.cs
+C:\Users\Mattias\OneDrive\Documents\My Projects\PizzeriaWebAppASPNET_MVC_CORE\src\PizzeriaWebAppASPNET_MVC_CORE\Controllers\AdminController.cs
+C:\Users\Mattias\OneDrive\Documents\My Projects\PizzeriaWebAppASPNET_MVC_CORE\src\PizzeriaWebAppASPNET_MVC_CORE\Controllers\HomeController.cs
+C:\Users\Mattias\OneDrive\Documents\My Projects\PizzeriaWebAppASPNET_MVC_CORE\src\PizzeriaWebAppASPNET_MVC_CORE\Controllers\ShoppingCartController.cs
+C:\Users\Mattias\OneDrive\Documents\My Projects\PizzeriaWebAppASPNET_MVC_CORE\src\PizzeriaWebAppASPNET_MVC_CORE\Extensions\SessionExtensions.cs
+C:\Users\Mattias\OneDrive\Documents\My Projects\PizzeriaWebAppASPNET_MVC_CORE\src\PizzeriaWebAppASPNET_MVC_CORE\Infrastructure\RoleUsersTagHelper.cs
+C:\Users\Mattias\OneDrive\Documents\My Projects\PizzeriaWebAppASPNET_MVC_CORE\src\PizzeriaWebAppASPNET_MVC_CORE\Infrastructure\ValidateActionParametersAttribute.cs
+C:\Users\Mattias\OneDrive\Documents\My Projects\PizzeriaWebAppASPNET_MVC_CORE\src\PizzeriaWebAppASPNET_MVC_CORE\Migrations\20170112100915_AddingIdentityContext.cs
+C:\Users\Mattias\OneDrive\Documents\My Projects\PizzeriaWebAppASPNET_MVC_CORE\src\PizzeriaWebAppASPNET_MVC_CORE\Migrations\20170112100915_AddingIdentityContext.Designer.cs
+C:\Users\Mattias\OneDrive\Documents\My Projects\PizzeriaWebAppASPNET_MVC_CORE\src\PizzeriaWebAppASPNET_MVC_CORE\Migrations\ApplicationDbContextModelSnapshot.cs
+C:\Users\Mattias\OneDrive\Documents\My Projects\PizzeriaWebAppASPNET_MVC_CORE\src\PizzeriaWebAppASPNET_MVC_CORE\Models\ApplicationDbContext.cs
+C:\Users\Mattias\OneDrive\Documents\My Projects\PizzeriaWebAppASPNET_MVC_CORE\src\PizzeriaWebAppASPNET_MVC_CORE\Models\ApplicationUser.cs
+C:\Users\Mattias\OneDrive\Documents\My Projects\PizzeriaWebAppASPNET_MVC_CORE\src\PizzeriaWebAppASPNET_MVC_CORE\Models\AspNetRoleClaims.cs
+C:\Users\Mattias\OneDrive\Documents\My Projects\PizzeriaWebAppASPNET_MVC_CORE\src\PizzeriaWebAppASPNET_MVC_CORE\Models\AspNetRoles.cs
+C:\Users\Mattias\OneDrive\Documents\My Projects\PizzeriaWebAppASPNET_MVC_CORE\src\PizzeriaWebAppASPNET_MVC_CORE\Models\AspNetUserClaims.cs
+C:\Users\Mattias\OneDrive\Documents\My Projects\PizzeriaWebAppASPNET_MVC_CORE\src\PizzeriaWebAppASPNET_MVC_CORE\Models\AspNetUserLogins.cs
+C:\Users\Mattias\OneDrive\Documents\My Projects\PizzeriaWebAppASPNET_MVC_CORE\src\PizzeriaWebAppASPNET_MVC_CORE\Models\AspNetUserRoles.cs
+C:\Users\Mattias\OneDrive\Documents\My Projects\PizzeriaWebAppASPNET_MVC_CORE\src\PizzeriaWebAppASPNET_MVC_CORE\Models\AspNetUsers.cs
+C:\Users\Mattias\OneDrive\Documents\My Projects\PizzeriaWebAppASPNET_MVC_CORE\src\PizzeriaWebAppASPNET_MVC_CORE\Models\AspNetUserTokens.cs
+C:\Users\Mattias\OneDrive\Documents\My Projects\PizzeriaWebAppASPNET_MVC_CORE\src\PizzeriaWebAppASPNET_MVC_CORE\Models\Bestallning.cs
+C:\Users\Mattias\OneDrive\Documents\My Projects\PizzeriaWebAppASPNET_MVC_CORE\src\PizzeriaWebAppASPNET_MVC_CORE\Models\BestallningMatratt.cs
+C:\Users\Mattias\OneDrive\Documents\My Projects\PizzeriaWebAppASPNET_MVC_CORE\src\PizzeriaWebAppASPNET_MVC_CORE\Models\CartSesssion.cs
+C:\Users\Mattias\OneDrive\Documents\My Projects\PizzeriaWebAppASPNET_MVC_CORE\src\PizzeriaWebAppASPNET_MVC_CORE\Models\EFDatabaseRepo.cs
+C:\Users\Mattias\OneDrive\Documents\My Projects\PizzeriaWebAppASPNET_MVC_CORE\src\PizzeriaWebAppASPNET_MVC_CORE\Models\IDatabaseRepo.cs
+C:\Users\Mattias\OneDrive\Documents\My Projects\PizzeriaWebAppASPNET_MVC_CORE\src\PizzeriaWebAppASPNET_MVC_CORE\Models\Kund.cs
+C:\Users\Mattias\OneDrive\Documents\My Projects\PizzeriaWebAppASPNET_MVC_CORE\src\PizzeriaWebAppASPNET_MVC_CORE\Models\Matratt.cs
+C:\Users\Mattias\OneDrive\Documents\My Projects\PizzeriaWebAppASPNET_MVC_CORE\src\PizzeriaWebAppASPNET_MVC_CORE\Models\MatrattProdukt.cs
+C:\Users\Mattias\OneDrive\Documents\My Projects\PizzeriaWebAppASPNET_MVC_CORE\src\PizzeriaWebAppASPNET_MVC_CORE\Models\MatrattTyp.cs
+C:\Users\Mattias\OneDrive\Documents\My Projects\PizzeriaWebAppASPNET_MVC_CORE\src\PizzeriaWebAppASPNET_MVC_CORE\Models\MenyMaträtt.cs
+C:\Users\Mattias\OneDrive\Documents\My Projects\PizzeriaWebAppASPNET_MVC_CORE\src\PizzeriaWebAppASPNET_MVC_CORE\Models\Produkt.cs
+C:\Users\Mattias\OneDrive\Documents\My Projects\PizzeriaWebAppASPNET_MVC_CORE\src\PizzeriaWebAppASPNET_MVC_CORE\Models\TomasosContext.cs
+C:\Users\Mattias\OneDrive\Documents\My Projects\PizzeriaWebAppASPNET_MVC_CORE\src\PizzeriaWebAppASPNET_MVC_CORE\Models\ViewModels\AdminUpdateUserViewModel.cs
+C:\Users\Mattias\OneDrive\Documents\My Projects\PizzeriaWebAppASPNET_MVC_CORE\src\PizzeriaWebAppASPNET_MVC_CORE\Models\ViewModels\AdminViewModel.cs
+C:\Users\Mattias\OneDrive\Documents\My Projects\PizzeriaWebAppASPNET_MVC_CORE\src\PizzeriaWebAppASPNET_MVC_CORE\Models\ViewModels\CheckOutViewModel.cs
+C:\Users\Mattias\OneDrive\Documents\My Projects\PizzeriaWebAppASPNET_MVC_CORE\src\PizzeriaWebAppASPNET_MVC_CORE\Models\ViewModels\MenyViewModel.cs
+C:\Users\Mattias\OneDrive\Documents\My Projects\PizzeriaWebAppASPNET_MVC_CORE\src\PizzeriaWebAppASPNET_MVC_CORE\Models\ViewModels\RegisterViewModel.cs
+C:\Users\Mattias\OneDrive\Documents\My Projects\PizzeriaWebAppASPNET_MVC_CORE\src\PizzeriaWebAppASPNET_MVC_CORE\Models\ViewModels\ShoppingCartViewModel.cs
+C:\Users\Mattias\OneDrive\Documents\My Projects\PizzeriaWebAppASPNET_MVC_CORE\src\PizzeriaWebAppASPNET_MVC_CORE\Models\ViewModels\UpdateUserViewModel.cs
+C:\Users\Mattias\OneDrive\Documents\My Projects\PizzeriaWebAppASPNET_MVC_CORE\src\PizzeriaWebAppASPNET_MVC_CORE\Models\ViewModels\UserViewModel.cs

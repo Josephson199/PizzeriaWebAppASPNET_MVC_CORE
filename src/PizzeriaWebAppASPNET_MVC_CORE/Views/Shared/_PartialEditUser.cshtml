@@ -1,0 +1,87 @@
+﻿@model PizzeriaWebAppASPNET_MVC_CORE.Models.ViewModels.AdminUpdateUserViewModel
+
+
+<script type="text/javascript">
+
+    var viewbag = '@ViewBag.Updated';
+
+    function Success() {
+        alert("Fel format på lösenord. Minst 8 karaktärer");
+    }
+
+
+    if (viewbag === "false") {
+        Success();
+    }
+
+
+</script>
+
+<form class="well" data-ajax="true" data-ajax-method="POST" data-ajax-mode="replace" data-ajax-update="#updateUser" asp-controller="Admin" asp-action="UpdateUser" asp-antiforgery="true">
+
+
+    <div>
+        <input type="hidden" asp-for="@Model.AspNetUser.Id" value="@Model.AspNetUser.Id" />
+        <input type="hidden" asp-for="@Model.Kund.KundId" value="@Model.Kund.KundId" />
+        <div class="form-group">
+            <label for="Namn">Namn</label>&nbsp;&nbsp;&nbsp;<span class="text-danger" asp-validation-for="@Model.Kund.Namn"></span>
+            <input id="Namn" asp-for="@Model.Kund.Namn" type="text" class="form-control" />
+        </div>
+
+        <div class="form-group">
+            <label for="Gatuadress">Gatuadress</label>&nbsp;&nbsp;&nbsp;<span class="text-danger" asp-validation-for="@Model.Kund.Gatuadress"></span>
+            <input id="Gatuadress" asp-for="@Model.Kund.Gatuadress" type="text" class="form-control" />
+        </div>
+        <div class="row">
+            <div class="col-sm-6 form-group">
+                <label for="Postnr">Postnr</label>&nbsp;&nbsp;&nbsp;<span class="text-danger" asp-validation-for="@Model.Kund.Postnr"></span>
+                <input id="Postnr" asp-for="@Model.Kund.Postnr" type="text" class="form-control">
+            </div>
+
+            <div class="col-sm-6 form-group">
+                <label for="PostOrt">Postort</label>&nbsp;&nbsp;&nbsp;<span class="text-danger" asp-validation-for="@Model.Kund.Postort"></span>
+                <input id="PostOrt" asp-for="@Model.Kund.Postort" type="text" class="form-control">
+            </div>
+        </div>
+
+        <div class="form-group">
+            <label for="Email">Email</label>&nbsp;&nbsp;&nbsp;<span class="text-danger" asp-validation-for="@Model.Kund.Email"></span>
+            <input id="Email" asp-for="@Model.Kund.Email" type="text" class="form-control">
+        </div>
+        <div class="form-group">
+            <label for="Tele">Telefon</label>&nbsp;&nbsp;&nbsp;<span class="text-danger" asp-validation-for="@Model.Kund.Telefon"></span>
+            <input id="Tele" asp-for="@Model.Kund.Telefon" type="text" class="form-control">
+        </div>
+        <div class="form-group">
+            <label for="Anv">Användarnamn</label>&nbsp;&nbsp;&nbsp;<span class="text-danger" asp-validation-for="@Model.AspNetUser.UserName"></span>
+            <input id="Anv" asp-for="@Model.AspNetUser.UserName" type="text" class="form-control">
+        </div>
+        <div class="form-group">
+            <input value="Update" type="submit" class="btn btn-lg btn-info" />
+        </div>
+    </div>
+    
+</form>
+<form class="well" method="get" asp-controller="Admin" asp-action="UpdatePassword">
+    <input type="hidden" name="aspNetUserId" Value="@Model.AspNetUser.Id"/>
+    <input type="hidden" name="kundId" value="@Model.Kund.KundId" />
+    <div class="form-group">
+        <label>Lösenord</label>
+        <input id="inputLösen" name="password" type="text" class="form-control" readonly>
+    </div>
+    <input type="submit" class="btn btn-lg btn-info" Value="Update Password" />
+    <button id="btnChangePassword" type="button" class="btn btn-lg btn-warning">Enable Password Change</button> 
+</form>
+
+
+
+
+    <script>
+
+        $("#btnChangePassword").on("click", function () {
+            $('#inputLösen').attr('readonly', !$('#inputLösen').attr('readonly'));
+        })
+
+    </script>
+
+

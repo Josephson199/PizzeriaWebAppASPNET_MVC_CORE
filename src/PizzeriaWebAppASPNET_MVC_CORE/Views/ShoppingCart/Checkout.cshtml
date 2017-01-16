@@ -1,0 +1,25 @@
+﻿@model PizzeriaWebAppASPNET_MVC_CORE.Models.ViewModels.CheckOutViewModel
+
+
+
+<div class="container">
+    
+            
+            <div class="well text-center col-md-4 col-md-offset-4">
+                
+                <div><h4>Thanks for your order</h4><span></span> <h2>@Model.Kund.Namn</h2></div>
+               
+                <div><h5>This is your order</h5></div>
+
+                @{
+                    foreach (var matratt in Model.Matratter)
+                    {
+                        <div><h3>@matratt.MatrattNamn</h3></div>
+                    }
+                }
+
+            </div>
+
+           
+
+    </div>

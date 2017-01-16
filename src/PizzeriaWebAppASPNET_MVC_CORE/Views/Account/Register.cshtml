@@ -1,0 +1,74 @@
+﻿@model PizzeriaWebAppASPNET_MVC_CORE.Models.ViewModels.RegisterViewModel
+
+<link href="~/css/register.css" rel="stylesheet" />
+
+<script type="text/javascript">
+
+    
+
+    function Success() {
+       
+            alert("Användare sparad, Logga in i högra hörnet.");
+            window.location = '/Home/Meny'; 
+        }
+
+
+    if (@ViewBag.Success === "true") {
+        Success();
+    }
+    
+
+</script>
+    
+    
+
+
+
+<form asp-controller="Account" asp-action="Register" asp-antiforgery="true" method="post">
+
+        
+    <div class="col-sm-6 well">
+
+        <div class="form-group">
+            <label for="Namn">Namn*</label>&nbsp;&nbsp;&nbsp;<span class="text-danger" asp-validation-for="@Model.Kund.Namn"></span>
+            <input id="Namn" asp-for="@Model.Kund.Namn" type="text" class="form-control"/>
+        </div>
+
+        <div class="form-group">
+            <label for="Gatuadress">Gatuadress*</label>&nbsp;&nbsp;&nbsp;<span class="text-danger" asp-validation-for="@Model.Kund.Gatuadress"></span>
+            <input id="Gatuadress" asp-for="@Model.Kund.Gatuadress" type="text" class="form-control"/>
+        </div>
+        <div class="row">
+            <div class="col-sm-6 form-group">
+                <label for="Postnr">Postnr*</label>&nbsp;&nbsp;&nbsp;<span class="text-danger" asp-validation-for="@Model.Kund.Postnr"></span>
+                <input id="Postnr" asp-for="@Model.Kund.Postnr" type="text" class="form-control">
+            </div>
+
+            <div class="col-sm-6 form-group">
+                <label for="PostOrt">Postort*</label>&nbsp;&nbsp;&nbsp;<span class="text-danger" asp-validation-for="@Model.Kund.Postort"></span>
+                <input id="PostOrt" asp-for="@Model.Kund.Postort" type="text" class="form-control">
+            </div>
+        </div>
+
+        <div class="form-group">
+            <label for="Email">Email</label>&nbsp;&nbsp;&nbsp;<span class="text-danger" asp-validation-for="@Model.Kund.Email"></span>
+            <input id="Email" asp-for="@Model.Kund.Email" class="form-control">
+        </div>
+        <div class="form-group">
+            <label for="Tele">Telefon</label>&nbsp;&nbsp;&nbsp;<span class="text-danger" asp-validation-for="@Model.Kund.Telefon"></span>
+            <input id="Tele" asp-for="@Model.Kund.Telefon" class="form-control">
+        </div>
+        <div class="form-group">
+            <label for="Anv">Användarnamn*</label>&nbsp;&nbsp;&nbsp;<span class="text-danger" asp-validation-for="@Model.AspNetUser.UserName"></span>
+            <input id="Anv" asp-for="@Model.AspNetUser.UserName" type="text" class="form-control">
+        </div>
+        <div class="form-group">
+            <label for="Lösen">Lösenord*</label>&nbsp;&nbsp;&nbsp;<span class="text-danger" asp-validation-for="Password"></span>
+            <input id="Lösen" asp-for="Password" type="password" class="form-control">
+        </div>
+        <input value="Registrera" type="submit" class="btn btn-lg btn-info"/>
+    </div>
+
+</form>
+
+

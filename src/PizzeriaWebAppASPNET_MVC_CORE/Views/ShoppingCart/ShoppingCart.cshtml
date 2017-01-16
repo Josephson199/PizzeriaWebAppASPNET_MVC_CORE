@@ -1,49 +1,87 @@
-﻿
+﻿@model PizzeriaWebAppASPNET_MVC_CORE.Models.ViewModels.ShoppingCartViewModel
+
+@using System.Globalization
+
+@{
+    int sum = 0;
+
+    if (Model.CartSesssion.Maträtter != null)
+    {
+        sum = Model.CartSesssion.Maträtter.Sum(x => x.Pris);
+    }
+   
+
+    CultureInfo swe = new CultureInfo("sv-SE");
+}
 
 <link href="//maxcdn.bootstrapcdn.com/font-awesome/4.1.0/css/font-awesome.min.css" rel="stylesheet">
 <link href="~/css/ShoppingCart.css" rel="stylesheet" />
 <div class="container">
-    <table id="cart" class="table table-hover table-condensed">
+    <table id="cart" class="table table-hover table-condensed well">
         <thead>
-            <tr>
-                <th style="width:50%">Product</th>
-                <th style="width:10%">Price</th>
-                <th style="width:8%">Quantity</th>
-                <th style="width:22%" class="text-center">Subtotal</th>
-                <th style="width:10%"></th>
-            </tr>
+        <tr>
+            <th style="width:72%">Product</th>
+            <th style="width:18%">Price</th>
+            
+            
+            
+        </tr>
         </thead>
-        <tbody>
-            <tr>
-                <td data-th="Product">
-                    <div class="row">
-                        <div class="col-sm-2 hidden-xs"><img src="http://placehold.it/100x100" alt="..." class="img-responsive" /></div>
-                        <div class="col-sm-10">
-                            <h4 class="nomargin">Product 1</h4>
-                            <p>Quis aute iure reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Lorem ipsum dolor sit amet.</p>
-                        </div>
-                    </div>
-                </td>
-                <td data-th="Price">$1.99</td>
-                <td data-th="Quantity">
-                    <input type="number" class="form-control text-center" value="1">
-                </td>
-                <td data-th="Subtotal" class="text-center">1.99</td>
-                <td class="actions" data-th="">
-                    <button class="btn btn-info btn-sm"><i class="fa fa-refresh"></i></button>
-                    <button class="btn btn-danger btn-sm"><i class="fa fa-trash-o"></i></button>
-                </td>
-            </tr>
-        </tbody>
+        
+        @{
+            if (Model.CartSesssion.Maträtter != null)
+            {
+                foreach (var maträtt in Model.CartSesssion.Maträtter)
+                {
+                    <tbody>
+                        <tr>
+                            <td data-th="Product">
+                                <div class="row">
+
+                                    <div class="col-sm-10">
+                                        <h4 class="nomargin">@maträtt.MatrattNamn</h4>
+                                        <p>@maträtt.Beskrivning</p>
+                                    </div>
+                                </div>
+                            </td>
+                            <td data-th="Price">@maträtt.Pris.ToString("C", swe)</td>
+
+                            <td class="actions" data-th="">
+                                <a asp-controller="ShoppingCart" asp-action="RemoveFromCart" asp-route-id="@maträtt.MatrattId" class="btn btn-danger btn-sm"><i class="fa fa-trash-o"></i></a>
+                            </td>
+                        </tr>
+                    </tbody>
+                }
+            }
+
+
+        }
+       
         <tfoot>
-            <tr class="visible-xs">
-                <td class="text-center"><strong>Total 1.99</strong></td>
-            </tr>
+         
             <tr>
-                <td><a href="#" class="btn btn-warning"><i class="fa fa-angle-left"></i> Continue Shopping</a></td>
-                <td colspan="2" class="hidden-xs"></td>
-                <td class="hidden-xs text-center"><strong>Total $1.99</strong></td>
-                <td><a href="#" class="btn btn-success btn-block">Checkout <i class="fa fa-angle-right"></i></a></td>
+                <td><a asp-controller="Home" asp-action="Meny" class="btn btn-warning"><i class="fa fa-angle-left"></i> Continue Shopping</a></td>
+                <td class="hidden-xs text-center"><strong>@sum.ToString("C", swe)</strong></td>
+                @{
+                    if (SignInManager.IsSignedIn(User))
+                    {
+                        var cartSession = Context.Session.GetObjectFromJson<CartSesssion>("CartSession");
+
+                       
+                            if (cartSession?.Maträtter.Count > 0)
+                            {
+                                <td><a asp-controller="ShoppingCart" asp-action="Checkout" class="btn btn-success btn-block">Checkout<i class="fa fa-angle-right"></i></a></td>
+                            }
+
+                        
+
+                    }
+                    else
+                    {
+                        <td><a class="btn btn-warning btn-block">Checkout(Please Log in or register)<i class="fa fa-angle-right"></i></a></td>
+                    }
+                }
+                
             </tr>
         </tfoot>
     </table>
