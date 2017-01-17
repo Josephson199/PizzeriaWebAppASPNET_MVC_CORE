@@ -5,11 +5,9 @@ using System.Threading.Tasks;
 
 namespace PizzeriaWebAppASPNET_MVC_CORE.Models.ViewModels
 {
-    public class CheckOutViewModel 
+    public class AdminUpdateOrderViewModel
     {
-        public IEnumerable<Matratt> Matratter { get; set; }
-
         public Kund Kund { get; set; }
-        public int TotalKostnad { get; set; }
+        public IEnumerable<Bestallning> Bestallningar { get; set; }
     }
 }

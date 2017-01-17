@@ -232,6 +232,8 @@
 "C:\Users\Mattias\OneDrive\Documents\My Projects\PizzeriaWebAppASPNET_MVC_CORE\src\PizzeriaWebAppASPNET_MVC_CORE\Models\MenyMaträtt.cs"
 "C:\Users\Mattias\OneDrive\Documents\My Projects\PizzeriaWebAppASPNET_MVC_CORE\src\PizzeriaWebAppASPNET_MVC_CORE\Models\Produkt.cs"
 "C:\Users\Mattias\OneDrive\Documents\My Projects\PizzeriaWebAppASPNET_MVC_CORE\src\PizzeriaWebAppASPNET_MVC_CORE\Models\TomasosContext.cs"
+"C:\Users\Mattias\OneDrive\Documents\My Projects\PizzeriaWebAppASPNET_MVC_CORE\src\PizzeriaWebAppASPNET_MVC_CORE\Models\ViewModels\AdminFoodsViewModel.cs"
+"C:\Users\Mattias\OneDrive\Documents\My Projects\PizzeriaWebAppASPNET_MVC_CORE\src\PizzeriaWebAppASPNET_MVC_CORE\Models\ViewModels\AdminUpdateOrderViewModel.cs"
 "C:\Users\Mattias\OneDrive\Documents\My Projects\PizzeriaWebAppASPNET_MVC_CORE\src\PizzeriaWebAppASPNET_MVC_CORE\Models\ViewModels\AdminUpdateUserViewModel.cs"
 "C:\Users\Mattias\OneDrive\Documents\My Projects\PizzeriaWebAppASPNET_MVC_CORE\src\PizzeriaWebAppASPNET_MVC_CORE\Models\ViewModels\AdminViewModel.cs"
 "C:\Users\Mattias\OneDrive\Documents\My Projects\PizzeriaWebAppASPNET_MVC_CORE\src\PizzeriaWebAppASPNET_MVC_CORE\Models\ViewModels\CheckOutViewModel.cs"

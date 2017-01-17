@@ -1,0 +1,75 @@
+﻿@model PizzeriaWebAppASPNET_MVC_CORE.Models.ViewModels.AdminUpdateOrderViewModel
+
+
+@using System.Globalization
+
+@{
+    CultureInfo swe = new CultureInfo("sv-SE");
+}
+
+
+
+
+
+
+
+
+<div class="bg-primary panel-body">
+    <h4>@Model.Kund.Namn  Orders</h4>
+</div>
+<table style="background-color: white" class="table table-bordered table-condensed">
+    @if (Model.Bestallningar.Count() <= 0)
+            {
+        <tr><td colspan="2">No Orders</td></tr>
+    }
+    else
+    {
+        <thead>
+        <tr>
+            <th>Order Id</th>
+            <th>Date</th>
+            <th>Total</th>
+            <th>Delivered</th>
+            
+
+        </tr>
+        </thead>
+        foreach (var best in Model.Bestallningar)
+        {
+            <tr>
+                <td>@best.BestallningId</td>
+                <td>@best.BestallningDatum</td>
+                <td>@best.Totalbelopp.ToString("C", swe)</td>
+                <td>@best.Levererad</td>
+                <td>
+                    @if (best.Levererad == false)
+                    {<a asp-controller="Admin" class="btn btn-primary"
+                        asp-action="Deliver"
+                        asp-route-bestId="@best.BestallningId"
+                        asp-route-kundId="@Model.Kund.KundId"
+                        data-ajax="true"
+                        data-ajax-method="GET"
+                        data-ajax-mode="replace"
+                        data-ajax-update="#updateUser">
+                         Deliver
+                     </a> }
+                    
+                </td>
+                <td>
+                    <a asp-controller="Admin" class="btn btn-danger"
+                       asp-action="DeleteOrder"
+                       asp-route-bestId="@best.BestallningId"
+                       asp-route-kundId="@Model.Kund.KundId"
+                       data-ajax="true"
+                       data-ajax-method="GET"
+                       data-ajax-mode="replace"
+                       data-ajax-update="#updateUser">
+                        Delete
+                    </a>
+                </td>
+              
+
+            </tr>
+        }
+    }
+</table>

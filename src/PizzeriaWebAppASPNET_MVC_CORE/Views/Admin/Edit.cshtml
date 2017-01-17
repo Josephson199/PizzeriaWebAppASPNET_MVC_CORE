@@ -5,10 +5,10 @@
 <div class="bg-primary panel-body"><h4>Edit Role</h4></div>
 
 <div asp-validation-summary="All" class="text-danger"></div>
-<form asp-controller="Admin" asp-action="Edit" method="post">
+<form  asp-controller="Admin" asp-action="Edit" method="post">
     <input type="hidden" name="roleName" value="@Model.Role.Name" />
     <input type="hidden" name="roleId" value="@Model.Role.Id" />
-    <h6 class="bg-info panel-body">Add To @Model.Role.Name</h6>
+    <h6 style="margin: 0;" class="bg-info panel-body">Add To @Model.Role.Name</h6>
     <table style="background-color: white" class="table table-bordered table-condensed">
         @if (Model.NonMembers.Count() == 0)
         {
@@ -27,7 +27,7 @@
             }
         }
     </table>
-    <h6 class="bg-info panel-body">Remove From @Model.Role.Name</h6>
+    <h6 style="margin: 0;" class="bg-info panel-body">Remove From @Model.Role.Name</h6>
     <table style="background-color: white" class="table table-bordered table-condensed">
         @if (Model.Members.Count() == 0)
         {

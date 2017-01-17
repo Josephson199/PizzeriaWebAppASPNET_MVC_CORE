@@ -19,6 +19,7 @@ using PizzeriaWebAppASPNET_MVC_CORE.Models.ViewModels;
 namespace PizzeriaWebAppASPNET_MVC_CORE.Controllers
 {
     [Route("Cart")]
+    [AllowAnonymous]
     public class ShoppingCartController : Controller
     {
 
@@ -107,17 +108,15 @@ namespace PizzeriaWebAppASPNET_MVC_CORE.Controllers
 
             var kund = _repository.GetKund(appUser.Id);
 
+            var isInRolePremium = await _userManager.IsInRoleAsync(appUser, "PremiumUser");
 
             var matratter = cartSession.Maträtter;
 
-            var beställning = new Bestallning
-            {
-                Kund = kund,
-                BestallningDatum = DateTime.Now,
-                Totalbelopp = matratter.Sum(x => x.Pris)
-            };
+           
 
-            _repository.SaveBeställning(beställning);
+           var totalKostnad = _repository.SaveBeställning(matratter, kund, isInRolePremium);
+
+            
 
             var latestBest = _repository.GetLatestBest();
 
@@ -130,7 +129,7 @@ namespace PizzeriaWebAppASPNET_MVC_CORE.Controllers
                     Antal = matratt.Count()
                     
                 };
-                _repository.SaveBestMatratt(bestMatratt);
+                 _repository.SaveBestMatratt(bestMatratt);
                
             }
 
@@ -141,7 +140,9 @@ namespace PizzeriaWebAppASPNET_MVC_CORE.Controllers
             var model = new CheckOutViewModel()
             {
                 Matratter = matratterToShowAtCheckout,
-                Kund = kund
+                Kund = kund,
+                TotalKostnad = totalKostnad
+                
                 
             };
 

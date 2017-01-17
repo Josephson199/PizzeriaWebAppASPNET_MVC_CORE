@@ -9,7 +9,6 @@
 
 
 
-
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -65,23 +64,39 @@
                     @{
                         if (SignInManager.IsSignedIn(User))
                         {
+                            
                             <li><a asp-controller="Account" asp-action="UpdateUser">Profile</a></li>
-                            <li><a asp-controller="Admin" asp-action="Roles">Roles</a></li>
-                            <li><a asp-controller="Admin" asp-action="Users">Users</a></li>
                             <li><a asp-controller="Home" asp-action="Meny">Meny</a></li>
+
+                            if (User.IsInRole("Admin"))
+                            {
+
+                                <li><a asp-controller="Admin" asp-action="Roles">Roles</a></li>
+                                <li><a asp-controller="Admin" asp-action="Users">Users</a></li>
+                                <li><a asp-controller="Admin" asp-action="Foods">Foods</a></li>
+                            }
+
+
+
+
                             <li id="shoppingCartText">
                                 <a asp-controller="ShoppingCart" asp-action="ShoppingCart">
                                     Cart
 
                                     @{
                                         var cartSession = Context.Session.GetObjectFromJson<CartSesssion>("CartSession");
-                                        
-                                            if (cartSession?.Maträtter.Count > 0)
+
+                                        if (cartSession != null && cartSession.Maträtter != null)
+                                        {
+                                            if (cartSession.Maträtter.Count > 0)
                                             {
                                                 <span id="spanCart">(@cartSession.Maträtter.Count)</span>
                                             }
+                                        }
 
-                                        
+
+
+
                                     }
 
                                 </a>
@@ -97,12 +112,17 @@
 
                                     @{
                                         var cartSession = Context.Session.GetObjectFromJson<CartSesssion>("CartSession");
-                                       
+
+                                        if (cartSession != null && cartSession.Maträtter != null)
+                                        {
                                             if (cartSession?.Maträtter.Count > 0)
                                             {
                                                 <span id="spanCart">(@cartSession.Maträtter.Count)</span>
                                             }
-                                        
+                                        }
+
+
+
                                     }
 
                                 </a>
