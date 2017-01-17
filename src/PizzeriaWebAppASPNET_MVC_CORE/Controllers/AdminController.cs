@@ -16,6 +16,7 @@ using PizzeriaWebAppASPNET_MVC_CORE.Models.ViewModels;
 namespace PizzeriaWebAppASPNET_MVC_CORE.Controllers
 {
     [Route("Admin")]
+    [Authorize(Roles = "Admin")]
     public class AdminController : Controller
     {
 
@@ -27,11 +28,11 @@ namespace PizzeriaWebAppASPNET_MVC_CORE.Controllers
 
 
         public AdminController(
-                UserManager<ApplicationUser> userManager,
-                SignInManager<ApplicationUser> signInManager,
-                EFDatabaseRepo repo,
-                IPasswordHasher<ApplicationUser> passwordHash,
-                RoleManager<IdentityRole> roleManager)
+            UserManager<ApplicationUser> userManager,
+            SignInManager<ApplicationUser> signInManager,
+            EFDatabaseRepo repo,
+            IPasswordHasher<ApplicationUser> passwordHash,
+            RoleManager<IdentityRole> roleManager)
         {
             _userManager = userManager;
             _signInManager = signInManager;
@@ -41,7 +42,7 @@ namespace PizzeriaWebAppASPNET_MVC_CORE.Controllers
 
         }
 
-        [Route("")]
+
         [Route("Index")]
         public ViewResult Roles()
         {
@@ -51,11 +52,11 @@ namespace PizzeriaWebAppASPNET_MVC_CORE.Controllers
             {
                 Roles = roles
             };
-           return View(model);
-        } 
+            return View(model);
+        }
 
 
-     
+
 
         [HttpPost]
         [Route("Create")]
@@ -72,7 +73,7 @@ namespace PizzeriaWebAppASPNET_MVC_CORE.Controllers
                 }
                 else
                 {
-                   //TODO LOG
+                    //TODO LOG
                 }
             }
             return RedirectToAction("Roles");
@@ -107,12 +108,12 @@ namespace PizzeriaWebAppASPNET_MVC_CORE.Controllers
         [Route("Edit")]
         public async Task<IActionResult> Edit(AdminViewModel.RoleModificationModel model)
         {
-            
+
 
             IdentityResult result;
             if (ModelState.IsValid)
             {
-                foreach (string userId in model.IdsToAdd ?? new string[] { })
+                foreach (string userId in model.IdsToAdd ?? new string[] {})
                 {
                     ApplicationUser user = await _userManager.FindByIdAsync(userId);
                     if (user != null)
@@ -125,7 +126,7 @@ namespace PizzeriaWebAppASPNET_MVC_CORE.Controllers
                         }
                     }
                 }
-                foreach (string userId in model.IdsToDelete ?? new string[] { })
+                foreach (string userId in model.IdsToDelete ?? new string[] {})
                 {
                     ApplicationUser user = await _userManager.FindByIdAsync(userId);
                     if (user != null)
@@ -172,6 +173,7 @@ namespace PizzeriaWebAppASPNET_MVC_CORE.Controllers
                 NonMembers = nonMembers
             });
         }
+
         [Route("Users")]
         public IActionResult Users()
         {
@@ -179,7 +181,7 @@ namespace PizzeriaWebAppASPNET_MVC_CORE.Controllers
 
             var model = new UserViewModel() {Kunder = kunder};
 
-            
+
             return View(model);
         }
 
@@ -194,33 +196,34 @@ namespace PizzeriaWebAppASPNET_MVC_CORE.Controllers
             if (aspNetUser != null)
             {
 
-                 var model = new AdminUpdateUserViewModel()
-            {
-                Kund = kund,
-                AspNetUser = aspNetUser
-            };
+                var model = new AdminUpdateUserViewModel()
+                {
+                    Kund = kund,
+                    AspNetUser = aspNetUser
+                };
 
                 return PartialView("_PartialEditUser", model);
 
             }
 
             return RedirectToAction("Users");
-            
+
         }
+
         [HttpPost]
         public async Task<IActionResult> UpdateUser(AdminUpdateUserViewModel model)
         {
 
-            
+
             if (ModelState.IsValid)
             {
-                
+
                 var appUser = await _userManager.FindByIdAsync(model.AspNetUser.Id);
 
                 if (appUser != null)
                 {
                     _repository.UpdateUser(model.Kund);
-                    
+
                     appUser.UserName = model.AspNetUser.UserName;
 
                     var updateResult = await _userManager.UpdateAsync(appUser);
@@ -256,11 +259,229 @@ namespace PizzeriaWebAppASPNET_MVC_CORE.Controllers
                 return PartialView("_PartialUpdateSuccess");
             }
 
-          
+
             return RedirectToAction("Users");
         }
 
+
+
+        [Route("EditOrderPartial")]
+        public async Task<IActionResult> EditOrderPartial(int kundId)
+        {
+
+            var kund = _repository.GetKund(kundId);
+
+            var beställningar = _repository.GetBeställningar(kundId);
+
+            var aspNetUser = await _userManager.FindByIdAsync(kund.UserId);
+
+            if (aspNetUser != null)
+            {
+
+                var model = new AdminUpdateOrderViewModel()
+                {
+                    Kund = kund,
+                    Bestallningar = beställningar
+                };
+
+                return PartialView("_PartialOrderUser", model);
+
+            }
+
+            return RedirectToAction("Users");
+
+        }
+
+        [Route("Deliver")]
+        public async Task<IActionResult> Deliver(int bestId, int kundId)
+        {
+
+            _repository.DeliverOrder(bestId);
+
+
+            var kund = _repository.GetKund(kundId);
+
+            var beställningar = _repository.GetBeställningar(kundId);
+
+            var aspNetUser = await _userManager.FindByIdAsync(kund.UserId);
+
+            if (aspNetUser != null)
+            {
+
+                var model = new AdminUpdateOrderViewModel()
+                {
+                    Kund = kund,
+                    Bestallningar = beställningar
+                };
+
+                
+                return PartialView("_PartialOrderUser", model);
+
+                
+            }
+
+            return RedirectToAction("Users");
+        }
+        [Route("DeleteOrder")]
+        public async Task<IActionResult> DeleteOrder(int bestId, int kundId)
+        {
+            _repository.DeleletOrder(bestId);
+
+            var kund = _repository.GetKund(kundId);
+
+            var beställningar = _repository.GetBeställningar(kundId);
+
+            var aspNetUser = await _userManager.FindByIdAsync(kund.UserId);
+
+            if (aspNetUser != null)
+            {
+
+                var model = new AdminUpdateOrderViewModel()
+                {
+                    Kund = kund,
+                    Bestallningar = beställningar
+                };
+
+
+                return PartialView("_PartialOrderUser", model);
+
+
+            }
+
+            return RedirectToAction("Users");
+        }
+
+
+
+        [Route("Foods")]
+        [HttpGet]
+        public IActionResult Foods()
+        {
+
+            var maträtter = _repository.GetMatratter();
+            var maträttProdukter = _repository.GetMatratterProdukter();
+
+            var listMenyMaträtter = new List<MenyMaträtt>();
+
+            foreach (var maträtt in maträtter)
+            {
+                var menyMaträtt = new MenyMaträtt();
+                var products = new List<Produkt>();
+                menyMaträtt.Matratt = maträtt;
+
+                foreach (var prod in maträttProdukter)
+                {
+
+                    if (prod.MatrattId == maträtt.MatrattId)
+                    {
+                        products.Add(prod.Produkt);
+                    }
+
+                }
+
+                menyMaträtt.Produkter = products;
+                listMenyMaträtter.Add(menyMaträtt);
+            }
+
+
+
+
+            var produkter = _repository.GetProdukter();
+            
+           var matratTyper = _repository.GetMatrattTyper();
+
+            var model = new AdminFoodsViewModel.CreateFood();
+            model.Produkter = produkter;
+            model.MatrattTyper = matratTyper;
+            model.MenyMaträtter = listMenyMaträtter;
+            
+        
+            return View(model);
+        }
+
+
+
+
+        [Route("Foods")]
+        [HttpPost]
+        public IActionResult Foods(AdminFoodsViewModel.CreateFood model)
+        {
+
+
+           _repository.SaveMatratt(model.Matratt);
+
+           var matrattWithId = _repository.GetLatestSavedMatratt();
+
+            var matProdList = new List<MatrattProdukt>();
+
+
+            foreach (var prodId in model.ProduktIdsToAdd)
+            {
+                var matrattProd = new MatrattProdukt()
+                {
+                    ProduktId = prodId,
+                    MatrattId = matrattWithId.MatrattId
+                    
+                };
+                
+                matProdList.Add(matrattProd);
+
+            }
+
+            _repository.SaveMatrattProdList(matProdList);
+
+
+            return RedirectToAction("Foods");
+        }
+
+
+
+        [Route("FoodEditPartial")]
+        [HttpPost]
+        public IActionResult FoodEditPartial(int matrattId)
+        {
+            var matrattTyper = _repository.GetMatrattTyper();
+            var produkterInMatratt = _repository.GetProdukterInMatratt(matrattId);
+
+            var model = new AdminFoodsViewModel.CreateFood();
+
+            model.Matratt = _repository.GetMatratt(matrattId);
+            model.ProdukterInMatratt = produkterInMatratt;
+            model.MatrattTyper = matrattTyper;
+            model.Produkter = _repository.GetProdukter();
+
+            return PartialView("_PartialEditFood", model);
+        }
+
+        public IActionResult AddIngredient(string ingredientName)
+        {
+
+            _repository.AddIngredient(ingredientName);
+
+          return RedirectToAction("Foods");
+        }
+
+
+        [Route("UpdateFood")]
+        [HttpPost]
+        public IActionResult UpdateFood(AdminFoodsViewModel.CreateFood model)
+        {
+
+            _repository.ReplaceProdukterInMatratt(model.Matratt.MatrattId, model.ProduktIdsToAdd);
+
+            _repository.UpdateMatratt(model.Matratt);
+
+
+
+
+            return PartialView("_PartialUpdateSuccessFood");
+
+          
+
+
+        }
     }
 
 
+    
 }

@@ -1,0 +1,115 @@
+﻿@model PizzeriaWebAppASPNET_MVC_CORE.Models.ViewModels.AdminFoodsViewModel.CreateFood
+
+    <div class="row">
+        <div class="col-md-5">
+            <div class="bg-primary panel-body">
+                <h4>Create Dish</h4>
+            </div>
+
+            <form class="well" asp-controller="Admin" asp-action="Foods" method="post">
+                <div class="form-group">
+                    <input placeholder="Namn.." type="text" class="form-control" asp-for="@Model.Matratt.MatrattNamn" />
+                </div>
+                <div class="form-group">
+                    <input placeholder="Beskrivning.." type="text" class="form-control" asp-for="@Model.Matratt.Beskrivning" />
+                </div>
+                <div class="form-group">
+                    <input placeholder="Pris" type="text" class="form-control" asp-for="@Model.Matratt.Pris" />
+                </div>
+                <div class="form-group">
+                    <select asp-for="@Model.Matratt.MatrattTyp">
+                        @{
+                            foreach (var typ in Model.MatrattTyper)
+                            {
+                                <option Value="@typ.MatrattTyp1">@typ.Beskrivning</option>
+                            }
+                        }
+
+                    </select>
+                </div>
+                <div class="form-group">
+
+                    @{
+                        foreach (var produkt in Model.Produkter)
+                        {
+
+                            <input type="checkbox" name="ProduktIdsToAdd" value="@produkt.ProduktId">
+                            <span>@produkt.ProduktNamn</span>
+
+                        }
+                    }
+
+                </div>
+                <input type="submit" class="btn btn-default" Value="Create" />
+
+            </form>
+
+            <div class="bg-primary panel-body">
+                <h4>Create Ingredient</h4>
+            </div>
+            <form class="well" asp-controller="Admin" asp-action="AddIngredient" method="get">
+                <div class="form-group">
+
+                    <input class="form-control" placeholder="Ingredient name..." name="ingredientName" />
+
+
+                </div>
+
+                <input class="btn btn-default" type="submit" Value="Add Ingredient" />
+            </form>
+
+
+
+
+
+
+
+
+
+
+        </div>
+
+        <div class="col-md-2">
+
+            <div class="bg-primary panel-body">
+                <h4>Modify Dish</h4>
+            </div>
+            <div class="list-group">
+                @{
+
+                    foreach (var matratt in Model.MenyMaträtter)
+                    {
+
+                        <a class="list-group-item"
+                           asp-controller="Admin"
+                           asp-action="FoodEditPartial"
+                           asp-route-matrattId="@matratt.Matratt.MatrattId"
+                           data-ajax="true"
+                           data-ajax-method="POST"
+                           data-ajax-mode="replace"
+                           data-ajax-update="#matrattDivPartial">
+                            @matratt.Matratt.MatrattNamn
+                        </a>
+
+
+
+
+                    }
+                }
+
+            </div>
+
+        </div>
+
+
+
+        <div class="col-md-5" id="matrattDivPartial"></div>
+
+
+
+    </div>
+
+
+
+   
+        

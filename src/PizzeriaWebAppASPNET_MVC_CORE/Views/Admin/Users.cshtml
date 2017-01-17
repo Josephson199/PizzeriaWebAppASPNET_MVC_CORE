@@ -18,6 +18,8 @@
                         <th>Id</th>
                         <th>Namn</th>
                         <th>Email</th>
+                        <th>Info</th>
+                        <th>Orders</th>
                     </tr>
                 </thead>
                 foreach (var kund in Model.Kunder)
@@ -29,6 +31,17 @@
                         <td>
                             <a asp-controller="Admin"
                                asp-action="EditUserPartial"
+                               asp-route-kundId="@kund.KundId"
+                               data-ajax="true"
+                               data-ajax-method="GET"
+                               data-ajax-mode="replace"
+                               data-ajax-update="#updateUser">
+                                Edit
+                            </a>
+                        </td>
+                        <td>
+                            <a asp-controller="Admin"
+                               asp-action="EditOrderPartial"
                                asp-route-kundId="@kund.KundId"
                                data-ajax="true"
                                data-ajax-method="GET"

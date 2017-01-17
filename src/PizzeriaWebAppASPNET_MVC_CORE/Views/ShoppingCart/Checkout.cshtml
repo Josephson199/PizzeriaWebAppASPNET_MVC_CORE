@@ -1,5 +1,16 @@
 ﻿@model PizzeriaWebAppASPNET_MVC_CORE.Models.ViewModels.CheckOutViewModel
 
+@using System.Globalization
+
+@{
+    CultureInfo swe = new CultureInfo("sv-SE");
+
+
+    var discount = Model.Matratter.Sum(x => x.Pris) - Model.TotalKostnad;
+}
+
+
+
 
 
 <div class="container">
@@ -9,12 +20,14 @@
                 
                 <div><h4>Thanks for your order</h4><span></span> <h2>@Model.Kund.Namn</h2></div>
                
-                <div><h5>This is your order</h5></div>
+               
+                <div><h5>Total cost: @Model.TotalKostnad.ToString("C", swe)</h5></div>
+                <div><h5>Total discount: @discount.ToString("C", swe)</h5></div>
 
                 @{
-                    foreach (var matratt in Model.Matratter)
+                    foreach (var matratt in Model.Matratter.GroupBy(x=> x.MatrattNamn))
                     {
-                        <div><h3>@matratt.MatrattNamn</h3></div>
+                        <div><span style="font-size: 20px;">@matratt.Key</span>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span>Antal :  @matratt.Count()</span></div>
                     }
                 }
 

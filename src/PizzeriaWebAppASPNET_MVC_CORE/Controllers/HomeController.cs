@@ -2,6 +2,7 @@
 using System.Collections.Generic;
 using System.Linq;
 using System.Threading.Tasks;
+using Microsoft.AspNetCore.Authorization;
 using Microsoft.AspNetCore.Mvc;
 using PizzeriaWebAppASPNET_MVC_CORE.Models;
 using PizzeriaWebAppASPNET_MVC_CORE.Models.ViewModels;
@@ -12,6 +13,7 @@ namespace PizzeriaWebAppASPNET_MVC_CORE.Controllers
 {
     [Route("")]
     [Route("Home")]
+    [AllowAnonymous]
     public class HomeController : Controller
     {
         private readonly EFDatabaseRepo _repository;

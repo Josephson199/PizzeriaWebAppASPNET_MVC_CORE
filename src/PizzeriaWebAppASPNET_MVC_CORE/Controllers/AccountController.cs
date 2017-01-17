@@ -4,6 +4,7 @@ using System.Linq;
 using System.Threading.Tasks;
 using Microsoft.AspNetCore.Authorization;
 using Microsoft.AspNetCore.Http;
+using Microsoft.AspNetCore.Http.Authentication;
 using Microsoft.AspNetCore.Http.Features.Authentication;
 using Microsoft.AspNetCore.Identity;
 using Microsoft.AspNetCore.Mvc;
@@ -16,6 +17,7 @@ using PizzeriaWebAppASPNET_MVC_CORE.Models.ViewModels;
 namespace PizzeriaWebAppASPNET_MVC_CORE.Controllers
 {
     [Route("Account")]
+    
     public class AccountController : Controller
     {
 
@@ -82,7 +84,8 @@ namespace PizzeriaWebAppASPNET_MVC_CORE.Controllers
                             _repository.SaveUser(model.Kund);
                             ViewBag.Success = "true";
 
-                       
+                       return RedirectToAction("Meny", "Home");
+
                     }
 
                     
@@ -106,12 +109,7 @@ namespace PizzeriaWebAppASPNET_MVC_CORE.Controllers
         
         public async Task<IActionResult> Login(string username, string password)
         {
-            //if (string.IsNullOrWhiteSpace(login.LoginAnvändarnamn) || string.IsNullOrWhiteSpace(login.LoginLösenord))
-            //{
-            //    return RedirectToAction("Index", "Home");
-            //}
-          
-            
+           
                  var result = await _signInManager.PasswordSignInAsync(username, password, isPersistent: false, lockoutOnFailure: false);
 
                  if (result.Succeeded)
@@ -129,6 +127,9 @@ namespace PizzeriaWebAppASPNET_MVC_CORE.Controllers
         [Route("Logout")]
         public async Task<IActionResult> Logout()
         {
+
+            HttpContext.Session.SetObjectAsJson("CartSession",new CartSesssion() {Maträtter = new List<Matratt>()});
+
             await _signInManager.SignOutAsync();
 
             return RedirectToAction("Index", "Home");

@@ -1,0 +1,64 @@
+﻿@model PizzeriaWebAppASPNET_MVC_CORE.Models.ViewModels.AdminFoodsViewModel.CreateFood
+
+
+
+
+
+<div class="bg-primary panel-body">
+    <h4>Modify Dish</h4>
+</div>
+
+<form data-ajax="true" data-ajax-method="POST" data-ajax-mode="replace" data-ajax-update="#matrattDivPartial" class="well" asp-controller="Admin" asp-action="UpdateFood">
+    <input type="hidden" asp-for="@Model.Matratt.MatrattId"/>
+    <div class="form-group">
+        <label>Namn</label>
+        <input asp-for="@Model.Matratt.MatrattNamn" type="text" class="form-control"/>
+    </div>
+    <div class="form-group">
+        <label>Beskrivning</label>
+        <input asp-for="@Model.Matratt.Beskrivning" type="text" class="form-control"/>
+    </div>
+    <div class="form-group">
+        <label>Pris</label>
+        <input asp-for="@Model.Matratt.Pris" type="text" class="form-control"/>
+    </div>
+    <div class="form-group">
+        <select asp-for="@Model.Matratt.MatrattTyp">
+            @{
+                foreach (var typ in Model.MatrattTyper)
+                {
+                    <option Value="@typ.MatrattTyp1">@typ.Beskrivning</option>
+                }
+            }
+
+        </select>
+    </div>
+    <div class="form-group">
+        <label>Ingredients in dish:</label>
+        <ul>
+            @{
+                foreach (var produkt in Model.ProdukterInMatratt)
+                {
+                    <li>@produkt.ProduktNamn</li>
+                }}
+        </ul>
+
+    </div>
+    <label>Re add all required ingredients</label>
+    <div class="form-group">
+      
+
+        @{
+            foreach (var produkt in Model.Produkter)
+            {
+
+                <input type="checkbox" name="ProduktIdsToAdd" value="@produkt.ProduktId">
+                <span>@produkt.ProduktNamn</span>
+
+            }
+        }
+
+    </div>
+        <input type="submit" class="btn btn-default" Value="Modify" />
+
+</form>
