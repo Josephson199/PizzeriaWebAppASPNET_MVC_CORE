@@ -10,7 +10,7 @@
             </div>
             <div class="text-danger" asp-validation-summary="ModelOnly"></div>
             <table style="background-color: white" class="table table-condensed table-bordered table-bordered">
-                <tr><th>ID</th><th>Name</th><th>Users</th><th></th></tr>
+                <tr><th>Identity ID</th><th>Name</th><th>Users</th><th></th></tr>
                 @if (Model.Roles.Count() == 0)
             {
                     <tr><td colspan="4" class="text-center">No Roles</td></tr>
@@ -22,12 +22,13 @@
                         <tr>
                             <td>@role.Id</td>
                             <td>@role.Name</td>
+
                             <td identity-role="@role.Id"></td>
                             <td>
                                 <form asp-controller="Admin" asp-action="Delete" asp-route-id="@role.Id" method="post">
-                                    <a class="btn btn-sm btn-primary" asp-controller="Admin" asp-action="Edit"
+                                    <a style="width: 100%;" class="btn btn-sm btn-primary" asp-controller="Admin" asp-action="Edit"
                                        asp-route-id="@role.Id">Edit</a>
-                                    <button type="submit"
+                                    <button style="width: 100%;" type="submit"
                                             class="btn btn-sm btn-danger">
                                         Delete
                                     </button>
@@ -37,20 +38,12 @@
                     }
                 }
             </table>
-            @*<a class="btn btn-primary" asp-action="Create">Create</a>*@
-
         </div>
-
-
-
         <div class="col-xs-3">
-
-
             <div class="bg-primary panel-body"><h4>Create Role</h4></div>
-            <div asp-validation-summary="All" class="text-danger"></div>
-            <form asp-controller="Admin" asp-action="Create" method="post">
-                <div  class="form-group">
-                    <input placeholder="Role name.."  name="name" class="form-control" />
+              <form class="well" asp-controller="Admin" asp-action="Create" method="post">
+                <div class="form-group">
+                    <input placeholder="Role name.." name="name" class="form-control" />
                 </div>
                 <button type="submit" class="btn btn-primary">Create</button>
             </form>

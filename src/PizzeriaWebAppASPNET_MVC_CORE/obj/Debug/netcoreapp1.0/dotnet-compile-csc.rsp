@@ -206,6 +206,7 @@
 "C:\Users\Mattias\OneDrive\Documents\My Projects\PizzeriaWebAppASPNET_MVC_CORE\src\PizzeriaWebAppASPNET_MVC_CORE\Controllers\HomeController.cs"
 "C:\Users\Mattias\OneDrive\Documents\My Projects\PizzeriaWebAppASPNET_MVC_CORE\src\PizzeriaWebAppASPNET_MVC_CORE\Controllers\ShoppingCartController.cs"
 "C:\Users\Mattias\OneDrive\Documents\My Projects\PizzeriaWebAppASPNET_MVC_CORE\src\PizzeriaWebAppASPNET_MVC_CORE\Extensions\SessionExtensions.cs"
+"C:\Users\Mattias\OneDrive\Documents\My Projects\PizzeriaWebAppASPNET_MVC_CORE\src\PizzeriaWebAppASPNET_MVC_CORE\Infrastructure\IdentitySeedData.cs"
 "C:\Users\Mattias\OneDrive\Documents\My Projects\PizzeriaWebAppASPNET_MVC_CORE\src\PizzeriaWebAppASPNET_MVC_CORE\Infrastructure\RoleUsersTagHelper.cs"
 "C:\Users\Mattias\OneDrive\Documents\My Projects\PizzeriaWebAppASPNET_MVC_CORE\src\PizzeriaWebAppASPNET_MVC_CORE\Infrastructure\ValidateActionParametersAttribute.cs"
 "C:\Users\Mattias\OneDrive\Documents\My Projects\PizzeriaWebAppASPNET_MVC_CORE\src\PizzeriaWebAppASPNET_MVC_CORE\Migrations\20170112100915_AddingIdentityContext.cs"

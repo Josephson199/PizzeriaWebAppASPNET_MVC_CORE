@@ -20,69 +20,69 @@
     <table id="cart" class="table table-hover table-condensed well">
         <thead>
         <tr>
-            <th style="width:72%">Product</th>
-            <th style="width:18%">Price</th>
-            
-            
-            
+            <th style="width: 72%">Product</th>
+            <th style="width: 18%">Price</th>
+
+
+
         </tr>
         </thead>
-        
+
         @{
             if (Model.CartSesssion.Maträtter != null)
             {
                 foreach (var maträtt in Model.CartSesssion.Maträtter)
                 {
                     <tbody>
-                        <tr>
-                            <td data-th="Product">
-                                <div class="row">
+                    <tr>
+                        <td data-th="Product">
+                            <div class="row">
 
-                                    <div class="col-sm-10">
-                                        <h4 class="nomargin">@maträtt.MatrattNamn</h4>
-                                        <p>@maträtt.Beskrivning</p>
-                                    </div>
+                                <div class="col-sm-10">
+                                    <h4 class="nomargin">@maträtt.MatrattNamn</h4>
+                                    <p>@maträtt.Beskrivning</p>
                                 </div>
-                            </td>
-                            <td data-th="Price">@maträtt.Pris.ToString("C", swe)</td>
+                            </div>
+                        </td>
+                        <td data-th="Price">@maträtt.Pris.ToString("C", swe)</td>
 
-                            <td class="actions" data-th="">
-                                <a asp-controller="ShoppingCart" asp-action="RemoveFromCart" asp-route-id="@maträtt.MatrattId" class="btn btn-danger btn-sm"><i class="fa fa-trash-o"></i></a>
-                            </td>
-                        </tr>
+                        <td class="actions" data-th="">
+                            <a asp-controller="ShoppingCart" asp-action="RemoveFromCart" asp-route-id="@maträtt.MatrattId" class="btn btn-danger btn-sm"><i class="fa fa-trash-o"></i></a>
+                        </td>
+                    </tr>
                     </tbody>
                 }
             }
 
 
         }
-       
+
         <tfoot>
-         
-            <tr>
-                <td><a asp-controller="Home" asp-action="Meny" class="btn btn-warning"><i class="fa fa-angle-left"></i> Continue Shopping</a></td>
-                <td class="hidden-xs text-center"><strong>@sum.ToString("C", swe)</strong></td>
-                @{
-                    if (SignInManager.IsSignedIn(User))
+
+        <tr>
+            <td><a asp-controller="Home" asp-action="Meny" class="btn btn-primary"><i class="fa fa-angle-left"></i> Continue Shopping</a></td>
+            <td class="hidden-xs text-center"><strong>@sum.ToString("C", swe)</strong></td>
+            @{
+                if (SignInManager.IsSignedIn(User))
+                {
+                    var cartSession = Context.Session.GetObjectFromJson<CartSesssion>("CartSession");
+
+
+                    if (cartSession?.Maträtter.Count > 0)
                     {
-                        var cartSession = Context.Session.GetObjectFromJson<CartSesssion>("CartSession");
-
-                       
-                            if (cartSession?.Maträtter.Count > 0)
-                            {
-                                <td><a asp-controller="ShoppingCart" asp-action="Checkout" class="btn btn-success btn-block">Checkout<i class="fa fa-angle-right"></i></a></td>
-                            }
-
-                        
-
+                        <td><a asp-controller="ShoppingCart" asp-action="Checkout" class="btn btn-primary btn-block">Checkout<i class="fa fa-angle-right"></i></a></td>
                     }
-                    else
-                    {
-                        <td><a class="btn btn-warning btn-block">Checkout(Please Log in or register)<i class="fa fa-angle-right"></i></a></td>
-                    }
+
+
+
                 }
-                
-            </tr>
+                else
+                {
+                    <td><a class="btn btn-primary btn-block">Checkout(Please Log in or register)<i class="fa fa-angle-right"></i></a></td>
+                }
+            }
+
+        </tr>
         </tfoot>
     </table>
 </div>
